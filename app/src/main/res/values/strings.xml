@@ -16,4 +16,5 @@
   <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
   <string name="serverStatusLabel">Server status:</string>
   <string name="stringContent">string content</string>
+  <string name="onlinePlayersLabel">Online players:</string>
 </resources>
