@@ -29,7 +29,7 @@ public class AccountCharactersTest {
       HttpsURLConnection charConn = (HttpsURLConnection) charURL.openConnection();
       CharacterSheetParser parser = new CharacterSheetParser(charConn.getInputStream());
       parser.parseDocument();
-//      parser.printData();
+      parser.printData();
     }
   }
 }
