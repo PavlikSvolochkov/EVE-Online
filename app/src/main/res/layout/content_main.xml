@@ -13,21 +13,29 @@
       android:id="@+id/serverStatusLabel"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Server status: "/>
+      android:text="@string/serverStatusLabel"/>
 
   <TextView
       android:id="@+id/serverStatus"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_toRightOf="@+id/serverStatusLabel"
-      android:text="status"/>
+      android:text="@string/stringContent"/>
+
+  <TextView
+      android:id="@+id/onlinePlayersLabel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/serverStatus"
+      android:text="Online players: "/>
 
   <TextView
       android:id="@+id/onlinePlayers"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_below="@id/serverStatus"
-      android:text="Online players: "/>
+      android:layout_toRightOf="@+id/onlinePlayersLabel"
+      android:text="@string/stringContent"/>
 
   <ListView
       android:id="@+id/charListView"
