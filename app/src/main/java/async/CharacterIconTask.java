@@ -12,45 +12,35 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CharacterIconTask extends AsyncTask<String, Void, Bitmap> {
+public class CharacterIconTask extends AsyncTask<String, Void, List> {
 
   private String ICON_URL = "https://image.eveonline.com/Character/";
 
   private ImageView bmImage;
   private Context context;
 
+  private List<Bitmap> bitmapList;
+
   public CharacterIconTask(Context context) {
     this.context = context;
+    this.bitmapList = new ArrayList<>();
   }
 
-  protected Bitmap doInBackground(String... params) {
+  protected List doInBackground(String... params) {
     String charId = params[0];
     String imageWidth = params[1];
-    Bitmap icon = null;
     try {
-//      URL url = new URL(ICON_URL + width[0] + "_" + width[1] + ".jpg");
-//      Log.d("response", "****** Initialize InputStream ******");
-//      InputStream in = url.openStream();
-//      Log.d("response", "DECODE STREAM...");
-//      icon = BitmapFactory.decodeStream(in);
-
       URL imageUrl = new URL(ICON_URL + charId + "_" + imageWidth + ".jpg");
       Bitmap bitmap = BitmapFactory.decodeStream(imageUrl.openConnection().getInputStream());
-
-      FileOutputStream output = context.openFileOutput(charId + "_" + imageWidth + ".jpg", Context.MODE_PRIVATE);
-
-      byte[] data = new byte[1024];
-      output.write(data);
-      output.flush();
-      output.close();
-
-//      in.close();
+      bitmapList.add(bitmap);
     } catch (IOException e) {
       Log.e("Error", e.getMessage());
       e.printStackTrace();
     }
-    return icon;
+    return bitmapList;
   }
 
   protected void onPostExecute(Bitmap result) {

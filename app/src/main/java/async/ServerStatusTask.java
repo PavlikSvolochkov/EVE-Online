@@ -54,7 +54,7 @@ public class ServerStatusTask extends AsyncTask<Void, Void, Void> {
     if ("True".equals(serverStatus.getStatus())) {
       status.setTextColor(Color.GREEN);
       status.setText("Online");
-      players.append(String.valueOf(serverStatus.getPlayers()));
+      players.setText(String.valueOf(serverStatus.getPlayers()));
     } else {
       status.setTextColor(Color.RED);
       status.setText("Offline");
