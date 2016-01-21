@@ -1,2 +1,6 @@
 /build
 .gradle
+*.class
+/.idea/*.*
+/.idea/libraries/*.*
+*.iml
