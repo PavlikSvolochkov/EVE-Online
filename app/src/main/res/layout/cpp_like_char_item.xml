@@ -1,55 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@drawable/border_char_skill_filled_mid"
-                android:padding="8sp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/border_char_skill_filled_mid"
+              android:orientation="vertical"
+              android:padding="8sp">
 
-  <ImageView
-      android:id="@+id/icon512"
+  <RelativeLayout
+      android:id="@+id/iconsLayout"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:adjustViewBounds="true"
-      android:paddingBottom="8sp"
-      android:src="@drawable/ps_512"/>
+      android:layout_marginBottom="8sp">
 
-  <ImageView
-      android:id="@+id/spIcon"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/icon512"
-      android:paddingBottom="8sp"
-      android:src="@drawable/sp_icon"/>
+    <ImageView
+        android:id="@+id/icon512"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ps_512"/>
 
-  <ImageView
-      android:id="@+id/lineSeparator1"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/spIcon"
-      android:paddingBottom="8sp"
-      android:src="@drawable/line"/>
+    <ImageView
+        android:id="@+id/corpIcon"
+        android:layout_marginTop="8sp"
+        android:layout_marginLeft="8sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"/>
 
-  <ImageView
-      android:id="@+id/iskIcon"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/lineSeparator1"
-      android:paddingBottom="8sp"
-      android:src="@drawable/isk_icon"/>
-
-  <ImageView
-      android:id="@+id/lineSeparator2"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/iskIcon"
-      android:paddingBottom="8sp"
-      android:src="@drawable/line"/>
+  </RelativeLayout>
 
   <RelativeLayout
       android:id="@+id/progressBarLayout"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_below="@+id/lineSeparator2">
+      android:layout_below="@+id/iconsLayout"
+      android:layout_marginBottom="8sp">
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -67,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/progressBar"
-        android:layout_marginLeft="12sp"
+        android:layout_marginLeft="10sp"
         android:text="Power Grid Management* V"/>
 
     <TextView
@@ -76,9 +61,64 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/progressBar"
-        android:layout_marginRight="12sp"
-        android:text="20ч 22мин + "/>
+        android:layout_marginRight="10sp"
+        android:text="20ч 22мин"/>
 
   </RelativeLayout>
 
-</RelativeLayout>
+  <RelativeLayout
+      android:id="@+id/spLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/progressBarLayout">
+
+
+    <ImageView
+        android:id="@+id/spIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:src="@drawable/sp_icon"/>
+
+    <TextView
+        android:id="@+id/skillPoints"
+        style="@style/skillProgressStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10sp"
+        android:text="2 694 002 SP"/>
+
+  </RelativeLayout>
+
+  <ImageView
+      android:id="@+id/lineSeparator1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/spLayout"
+      android:paddingBottom="8sp"/>
+
+  <RelativeLayout
+      android:id="@+id/iskLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/lineSeparator1">
+
+    <ImageView
+        android:id="@+id/iskIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:src="@drawable/isk_icon"/>
+
+    <TextView
+        android:id="@+id/charBalance"
+        style="@style/skillProgressStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10sp"
+        android:text="92 892 002 ISK"/>
+
+  </RelativeLayout>
+</LinearLayout>

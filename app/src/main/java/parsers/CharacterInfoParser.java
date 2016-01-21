@@ -8,23 +8,18 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import logic.Character;
+import logic.CharacterInfo;
 
 public class CharacterInfoParser extends DefaultHandler {
 
   private String tempValue;
   private InputStream inputStream;
-  private List<EmploymentHistory> empHistoryList;
-
-  private Character character;
-  private EmploymentHistory empHistory;
+  private CharacterInfo character;
 
   public CharacterInfoParser(InputStream in) {
     this.inputStream = in;
@@ -53,40 +48,24 @@ public class CharacterInfoParser extends DefaultHandler {
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
     if (qName.equalsIgnoreCase("result")) {
-      character = new Character();
-    }
-    if (qName.equalsIgnoreCase("rowset")) {
-      empHistory = new EmploymentHistory();
-      if (empHistoryList == null) {
-        empHistoryList = new ArrayList<>();
-      }
-    }
-    if (qName.equalsIgnoreCase("row")) {
-      empHistory.setRecordID(attributes.getValue("recordID"));
-      empHistory.setCorporationID(attributes.getValue("corporationID"));
-      empHistory.setCorporationName(attributes.getValue("corporationName"));
-      empHistory.setStartDate(attributes.getValue("startDate"));
+      character = new CharacterInfo();
     }
   }
 
   @Override
   public void endElement(String uri, String localName, String qName) throws SAXException {
 
-    if (qName.equalsIgnoreCase("row")) {
-      empHistoryList.add(empHistory);
-    }
-
     if (qName.equalsIgnoreCase("characterID")) {
-      character.setCharacterId(tempValue);
+      character.setCharacterID(tempValue);
     }
     if (qName.equalsIgnoreCase("characterName")) {
-      character.setName(tempValue);
+      character.setCharacterName(tempValue);
     }
     if (qName.equalsIgnoreCase("race")) {
       character.setRace(tempValue);
     }
     if (qName.equalsIgnoreCase("bloodlineID")) {
-      character.setBloodlineId(tempValue);
+      character.setBloodlineID(tempValue);
     }
     if (qName.equalsIgnoreCase("bloodline")) {
       character.setBloodline(tempValue);
@@ -97,11 +76,47 @@ public class CharacterInfoParser extends DefaultHandler {
     if (qName.equalsIgnoreCase("ancestry")) {
       character.setAncestry(tempValue);
     }
+    if (qName.equalsIgnoreCase("accountBalance")) {
+      character.setAccountBalance(tempValue);
+    }
     if (qName.equalsIgnoreCase("corporationID")) {
       character.setCorporationID(tempValue);
     }
     if (qName.equalsIgnoreCase("corporation")) {
       character.setCorporation(tempValue);
+    }
+    if (qName.equalsIgnoreCase("skillPoints")) {
+      character.setSkillPoints(tempValue);
+    }
+    if (qName.equalsIgnoreCase("nextTrainingEnds")) {
+      character.setNextTrainingEnds(tempValue);
+    }
+    if (qName.equalsIgnoreCase("shipName")) {
+      character.setShipName(tempValue);
+    }
+    if (qName.equalsIgnoreCase("shipTypeID")) {
+      character.setShipTypeID(tempValue);
+    }
+    if (qName.equalsIgnoreCase("shipTypeName")) {
+      character.setShipTypeName(tempValue);
+    }
+    if (qName.equalsIgnoreCase("corporationDate")) {
+      character.setCorporationDate(tempValue);
+    }
+    if (qName.equalsIgnoreCase("allianceID")) {
+      character.setAllianceID(tempValue);
+    }
+    if (qName.equalsIgnoreCase("alliance")) {
+      character.setAlliance(tempValue);
+    }
+    if (qName.equalsIgnoreCase("allianceDate")) {
+      character.setAllianceDate(tempValue);
+    }
+    if (qName.equalsIgnoreCase("lastKnownLocation")) {
+      character.setLastKnownLocation(tempValue);
+    }
+    if (qName.equalsIgnoreCase("securityStatus")) {
+      character.setSecurityStatus(tempValue);
     }
   }
 
@@ -112,6 +127,10 @@ public class CharacterInfoParser extends DefaultHandler {
 
   public void printData() {
     Log.d("debug", getClass().getName() + "::Character: " + character.toString());
+  }
+
+  public CharacterInfo getCharacter() {
+    return character;
   }
 
   public class EmploymentHistory {
@@ -152,9 +171,5 @@ public class CharacterInfoParser extends DefaultHandler {
     public void setStartDate(String startDate) {
       this.startDate = startDate;
     }
-  }
-
-  public Character getCharacter() {
-    return character;
   }
 }

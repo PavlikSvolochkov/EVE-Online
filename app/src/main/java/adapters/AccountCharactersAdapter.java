@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import logic.Character;
+import logic.CharacterInfo;
 import ru.tsk.eveonline.R;
 
 public class AccountCharactersAdapter extends BaseAdapter {
@@ -24,14 +24,14 @@ public class AccountCharactersAdapter extends BaseAdapter {
 
   private ImageView charIcon;
 
-  private List<Character> characters;
+  private List<CharacterInfo> characters;
 
   private Activity activity;
   private LayoutInflater inflater;
 
   private List<Bitmap> charIcons;
 
-  public AccountCharactersAdapter(Activity activity, List<logic.Character> values, List<Bitmap> charIcons) {
+  public AccountCharactersAdapter(Activity activity, List<logic.CharacterInfo> values, List<Bitmap> charIcons) {
     super();
     this.characters = values;
     this.activity = activity;
@@ -53,15 +53,15 @@ public class AccountCharactersAdapter extends BaseAdapter {
       charIcon = (ImageView) convertView.findViewById(R.id.charIcon);
     }
 
-    Character character = characters.get(position);
+    CharacterInfo character = characters.get(position);
 
-    charName.setText(character.getName());
+    charName.setText(character.getCharacterName());
     corpName.setText(character.getCorporation());
     ancestry.setText(character.getRace() + " - " + character.getBloodline() + " - " + character.getAncestry());
-    balance.setText("Balance: " + character.getBalance());
-    training.setText(character.getFreeRespecs());
+    balance.setText("Balance: " + character.getAccountBalance());
+    training.setText(character.getSkillPoints());
 
-//    charIcon.setImageBitmap();
+    charIcon.setImageBitmap(charIcons.get(position));
 
     return convertView;
   }

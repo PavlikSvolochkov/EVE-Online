@@ -5,26 +5,26 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.concurrent.ExecutionException;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import logic.CharInfoViewHolder;
-import logic.Character;
+import logic.CharacterInfo;
 import parsers.CharacterInfoParser;
-import ru.tsk.eveonline.R;
 
-public class CharacterInfoTask extends AsyncTask<String, Void, Void> {
+public class CharacterInfoTask extends AsyncTask<String, Void, CharacterInfo> {
 
-  private final String CHAR_INFO = "https://api.eveonline.com/eve/CharacterInfo.xml.aspx?characterID=95767126&userID=4744217&API_KEY=1073741823";
+  private static final String API_KEY = "?keyID=4744217";
+  private static final String vCODE = "&vCODE=7VHnHgo7X02AmGVUK8QSKHJ9xb0KD3zaVQ15zNGARZGiMgguWL3825TAkgAWWuK9";
 
-  private Character character;
-  private CharInfoViewHolder viewHolder;
+  private final String CHARACTER_INFO = "https://api.eveonline.com/eve/CharacterInfo.xml.aspx" + API_KEY + vCODE;
+  private String charID;
+
+  private CharacterInfo character;
   private CharacterInfoParser parser;
 
-  public CharacterInfoTask(CharInfoViewHolder viewHolder) {
-    this.character = new Character();
-    this.viewHolder = viewHolder;
+  public CharacterInfoTask(String charId) {
+    this.charID += "&characterID=" + charId;
+    this.character = new CharacterInfo();
   }
 
   @Override
@@ -32,11 +32,11 @@ public class CharacterInfoTask extends AsyncTask<String, Void, Void> {
   }
 
   @Override
-  protected Void doInBackground(String... params) {
+  protected CharacterInfo doInBackground(String... params) {
     URL url;
     HttpsURLConnection con;
     try {
-      url = new URL(CHAR_INFO);
+      url = new URL(CHARACTER_INFO + charID);
       con = (HttpsURLConnection) url.openConnection();
       parser = new CharacterInfoParser(con.getInputStream());
       parser.parseDocument();
@@ -44,20 +44,11 @@ public class CharacterInfoTask extends AsyncTask<String, Void, Void> {
     } catch (IOException e) {
       Log.e("debug", e.getMessage());
     }
-    return null;
+    return character;
   }
 
   @Override
-  protected void onPostExecute(Void aVoid) {
-    character = parser.getCharacter();
-    viewHolder.imageView.setImageResource(R.drawable.ps_128);
-    viewHolder.characterName.setText(character.getName());
-    viewHolder.charRace.setText(character.getRace() + " - " + character.getBloodline() + " - " + character.getAncestry());
-    viewHolder.corporation.append(character.getCorporation());
-    try {
-      viewHolder.balance.append(String.valueOf(new AccountBalanceTask("").execute().get().getBalance()));
-    } catch (InterruptedException | ExecutionException e) {
-      Log.e("debug", e.getMessage());
-    }
+  protected void onPostExecute(CharacterInfo aVoid) {
+
   }
 }

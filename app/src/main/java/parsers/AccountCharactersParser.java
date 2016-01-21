@@ -85,7 +85,6 @@ public class AccountCharactersParser extends DefaultHandler {
   public void printData() {
     for (AccountCharacter character : characterList) {
       Log.d("debug", getClass().getName() + "::Character: " + character.toString());
-      System.out.println(character.toString());
     }
   }
 

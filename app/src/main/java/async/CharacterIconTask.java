@@ -7,39 +7,57 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
-import logic.AccountCharacter;
+public class CharacterIconTask extends AsyncTask<String, Void, Bitmap> {
 
-public class CharacterIconTask extends AsyncTask<String, Void, List> {
+  private final String IMAGE_SERVER = "https://image.eveonline.com";
+  private final String ALLIANCE = "/Alliance/";
+  private final String CORPORATION = "/Corporation/";
+  private final String CHARACTER = "/Character/";
+  private final String TYPE = "/Type/";
+  private final String RENDER = "/Render/";
 
-  private String ICON_URL = "https://image.eveonline.com/Character/";
-  private String picSize;
-  private List<Bitmap> bitmapList;
-  private List<AccountCharacter> accCharList;
+  private String id;
+  private String iconSize;
+  private String iconType;
 
+  private Bitmap bitmap;
 
-  public CharacterIconTask(List<AccountCharacter> accChars, String picSize) {
-    this.bitmapList = new ArrayList<>();
-    this.accCharList = accChars;
-    this.picSize = picSize;
+  public CharacterIconTask(String id, String iconType, String iconSize) {
+    this.id = id;
+    this.iconType = iconType;
+    this.iconSize = iconSize;
   }
 
-  protected List doInBackground(String... params) {
+  protected Bitmap doInBackground(String... params) {
+    URL imageUrl;
     try {
-      for (AccountCharacter character : accCharList) {
-        URL imageUrl = new URL(ICON_URL + character.getCharacterID() + "_" + picSize + ".jpg");
-        Bitmap bitmap = BitmapFactory.decodeStream(imageUrl.openConnection().getInputStream());
-        bitmapList.add(bitmap);
+      imageUrl = new URL(IMAGE_SERVER);
+      if (iconType == "alli") {
+        imageUrl = new URL(IMAGE_SERVER + ALLIANCE + id + "_" + iconSize + ".png");
       }
+      if (iconType == "corp") {
+        imageUrl = new URL(IMAGE_SERVER + CORPORATION + id + "_" + iconSize + ".png");
+      }
+      if (iconType == "char") {
+        imageUrl = new URL(IMAGE_SERVER + CHARACTER + id + "_" + iconSize + ".jpg");
+      }
+      if (iconType == "type") {
+        imageUrl = new URL(IMAGE_SERVER + TYPE + id + "_" + iconSize + ".png");
+      }
+      if (iconType == "rend") {
+        imageUrl = new URL(IMAGE_SERVER + RENDER + id + "_" + iconSize + ".png");
+      }
+
+      bitmap = BitmapFactory.decodeStream(imageUrl.openConnection().getInputStream());
+
     } catch (IOException e) {
       Log.e("debug", e.getMessage());
     }
-    return bitmapList;
+    return bitmap;
   }
 
   protected void onPostExecute(Bitmap result) {
-//    bmImage.setImageBitmap(result);
+
   }
 }

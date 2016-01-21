@@ -22,18 +22,27 @@ import java.util.concurrent.ExecutionException;
 import adapters.AccountCharactersAdapter;
 import async.AccountCharactersTask;
 import async.CharacterIconTask;
+import async.CharacterInfoTask;
 import async.CharacterSheetTask;
 import async.ServerStatusTask;
 import logic.AccountCharacter;
-import logic.Character;
+import logic.CharacterInfo;
 import logic.ServerStatus;
 
 public class MainActivity extends AppCompatActivity {
 
+  // Access Mask: 1073741823
+
   private ServerStatus serverStatus;
   private List<AccountCharacter> accCharList;
-  private List<Character> charList;
+  private List<CharacterInfo> charList;
   private List<Bitmap> charIcons;
+
+  private TextView statusTV;
+  private TextView playersTV;
+  private ListView listView;
+
+  private AccountCharactersAdapter adapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -52,26 +61,42 @@ public class MainActivity extends AppCompatActivity {
     });
 
     charIcons = new ArrayList<>();
-    accCharList = new ArrayList<AccountCharacter>();
+    accCharList = new ArrayList<>();
 
-    TextView statusTV = (TextView) findViewById(R.id.serverStatus);
-    TextView playersTV = (TextView) findViewById(R.id.onlinePlayers);
+    statusTV = (TextView) findViewById(R.id.serverStatus);
+    playersTV = (TextView) findViewById(R.id.onlinePlayers);
+
+    listView = (ListView) findViewById(R.id.charListView);
+    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+      @Override
+      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        Intent intent = new Intent(MainActivity.this, CharActivity.class);
+
+        intent.putExtra("ID", charList.get(position).getCharacterID());
+        intent.putExtra("CHAR_NAME", charList.get(position).getCharacterName());
+        intent.putExtra("BALANCE", charList.get(position).getAccountBalance());
+        intent.putExtra("SKILL_POINTS", charList.get(position).getSkillPoints());
+
+        MainActivity.this.startActivity(intent);
+      }
+    });
 
     try {
-      charIcons = new CharacterIconTask(accCharList, "256").execute().get();
+
       serverStatus = new ServerStatusTask(statusTV, playersTV).execute().get();
+
       accCharList = new AccountCharactersTask().execute().get();
       charList = new CharacterSheetTask(accCharList).execute().get();
-      AccountCharactersAdapter adapter = new AccountCharactersAdapter(this, charList, charIcons);
-      ListView listView = (ListView) findViewById(R.id.charListView);
+
+      for (AccountCharacter character : accCharList) {
+        charList.add(new CharacterInfoTask(character.getCharacterID()).execute().get());
+        charIcons.add(new CharacterIconTask(character.getCharacterID(), "char", "512").execute().get());
+      }
+
+      adapter = new AccountCharactersAdapter(this, charList, charIcons);
       listView.setAdapter(adapter);
-      listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-          Intent intent = new Intent(MainActivity.this, CharActivity.class);
-          MainActivity.this.startActivity(intent);
-        }
-      });
+
     } catch (InterruptedException | ExecutionException e) {
       Log.d("debug", e.getMessage());
     }

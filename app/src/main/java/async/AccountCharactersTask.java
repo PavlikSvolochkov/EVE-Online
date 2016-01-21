@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import logic.AccountCharacter;
 import parsers.AccountCharactersParser;
 
 public class AccountCharactersTask extends AsyncTask<Void, List, List> {
@@ -29,7 +30,7 @@ public class AccountCharactersTask extends AsyncTask<Void, List, List> {
   }
 
   @Override
-  protected List doInBackground(Void... params) {
+  protected List<AccountCharacter> doInBackground(Void... params) {
 
     URL url;
     HttpsURLConnection con;
@@ -37,7 +38,7 @@ public class AccountCharactersTask extends AsyncTask<Void, List, List> {
       url = new URL(CHARACTERS);
       Log.d("debug", getClass().getName() + "::Opening connection...");
       con = (HttpsURLConnection) url.openConnection();
-      Log.d("debug", getClass().getName() + "::Connection opened");
+      Log.d("debug", getClass().getName() + "::Connection opened.");
       parser = new AccountCharactersParser(con.getInputStream());
       parser.parseDocument();
       parser.printData();
