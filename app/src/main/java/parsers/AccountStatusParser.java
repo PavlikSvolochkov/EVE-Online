@@ -32,13 +32,13 @@ public class AccountStatusParser extends DefaultHandler {
       SAXParser parser = factory.newSAXParser();
       parser.parse(inputStream, this);
     } catch (ParserConfigurationException | SAXException | IOException e) {
-      Log.d("debug", "ERROR PARSE DOCUMENT");
+      Log.d("debug", e.getMessage());
     }
   }
 
   @Override
   public void startDocument() throws SAXException {
-    Log.d("debug", "START PARSING ACCOUNT STATUS");
+    Log.d("debug", getClass().getName() + "::START PARSING ACCOUNT STATUS");
   }
 
   @Override
@@ -71,7 +71,7 @@ public class AccountStatusParser extends DefaultHandler {
 
   @Override
   public void endDocument() throws SAXException {
-    Log.d("debug", "END PARSE ACCOUNT STATUS");
+    Log.d("debug", getClass().getName() + "::END PARSE ACCOUNT STATUS");
   }
 
   public Account getAccount() {

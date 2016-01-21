@@ -1,5 +1,7 @@
 package parsers;
 
+import android.util.Log;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -39,13 +41,13 @@ public class CharacterSheetParser extends DefaultHandler {
       SAXParser parser = factory.newSAXParser();
       parser.parse(inputStream, this);
     } catch (ParserConfigurationException | SAXException | IOException e) {
-//      Log.d("Response", "ERROR PARSE DOCUMENT");
+      Log.d("debug", e.getMessage());
     }
   }
 
   @Override
   public void startDocument() throws SAXException {
-//    Log.d("parser", "START DOCUMENT PARSING...");
+    Log.d("debug", getClass().getName() + "::START DOCUMENT PARSING...");
   }
 
   @Override
@@ -174,12 +176,12 @@ public class CharacterSheetParser extends DefaultHandler {
 
   @Override
   public void endDocument() throws SAXException {
-//    Log.d("parser", "END DOCUMENT PARSING.");
+    Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING.");
   }
 
   public void printData() {
     for (Character character : charList) {
-      System.out.println(character.toString());
+      Log.d("debug", getClass().getName() + "::Character: " + character.toString());
     }
   }
 

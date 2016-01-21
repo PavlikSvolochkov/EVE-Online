@@ -1,6 +1,7 @@
 package async;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.net.URL;
 import java.util.List;
@@ -19,40 +20,38 @@ public class CharacterSheetTask extends AsyncTask<Void, List, List> {
   private static final String CHARACTER_LIST = "https://api.eveonline.com/account/characters.xml.aspx" + API_KEY + vCODE;
   private static final String CHARACTER = "https://api.eveonline.com/char/CharacterSheet.xml.aspx" + API_KEY + vCODE;
 
-  private List<AccountCharacter> accountCharList;
+  private List<AccountCharacter> accCharList;
 
-  private AccountCharactersParser accountCharParser;
-  private CharacterSheetParser characterSheetParser;
+  private AccountCharactersParser accCharParser;
+  private CharacterSheetParser charSheetParser;
+
+  public CharacterSheetTask(List<AccountCharacter> accCharList) {
+    this.accCharList = accCharList;
+  }
 
   @Override
   protected void onPreExecute() {
     super.onPreExecute();
-    characterSheetParser = new CharacterSheetParser();
   }
 
   @Override
   protected List doInBackground(Void... params) {
 
-    try {
-      URL url = new URL(CHARACTER_LIST);
-      HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
-      accountCharParser = new AccountCharactersParser(conn.getInputStream());
-      accountCharParser.parseDocument();
-      accountCharParser.printData();
+    charSheetParser = new CharacterSheetParser();
 
-      accountCharList = accountCharParser.getCharList();
-      for (AccountCharacter accChar : accountCharList) {
+    try {
+      for (AccountCharacter accChar : accCharList) {
         URL charURL = new URL(CHARACTER + "&characterID=" + accChar.getCharacterID());
         HttpsURLConnection charConn = (HttpsURLConnection) charURL.openConnection();
-        characterSheetParser.setInputStream(charConn.getInputStream());
-        characterSheetParser.parseDocument();
-        characterSheetParser.printData();
+        charSheetParser.setInputStream(charConn.getInputStream());
+        charSheetParser.parseDocument();
+        charSheetParser.printData();
       }
     } catch (Exception e) {
-      e.printStackTrace();
+      Log.d("debug", e.getMessage());
     }
 
-    return characterSheetParser.getCharList();
+    return charSheetParser.getCharList();
   }
 
   @Override

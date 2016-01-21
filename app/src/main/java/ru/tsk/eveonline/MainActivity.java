@@ -1,28 +1,39 @@
 package ru.tsk.eveonline;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import adapters.AccountCharactersAdapter;
+import async.AccountCharactersTask;
 import async.CharacterIconTask;
 import async.CharacterSheetTask;
 import async.ServerStatusTask;
+import logic.AccountCharacter;
 import logic.Character;
+import logic.ServerStatus;
 
 public class MainActivity extends AppCompatActivity {
 
-  private List<Character> characterList;
+  private ServerStatus serverStatus;
+  private List<AccountCharacter> accCharList;
+  private List<Character> charList;
+  private List<Bitmap> charIcons;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -40,23 +51,30 @@ public class MainActivity extends AppCompatActivity {
       }
     });
 
+    charIcons = new ArrayList<>();
+    accCharList = new ArrayList<AccountCharacter>();
+
     TextView statusTV = (TextView) findViewById(R.id.serverStatus);
     TextView playersTV = (TextView) findViewById(R.id.onlinePlayers);
-    new ServerStatusTask(statusTV, playersTV).execute();
 
     try {
-      characterList = new CharacterSheetTask().execute().get();
-      AccountCharactersAdapter adapter = new AccountCharactersAdapter(this, characterList);
+      charIcons = new CharacterIconTask(accCharList, "256").execute().get();
+      serverStatus = new ServerStatusTask(statusTV, playersTV).execute().get();
+      accCharList = new AccountCharactersTask().execute().get();
+      charList = new CharacterSheetTask(accCharList).execute().get();
+      AccountCharactersAdapter adapter = new AccountCharactersAdapter(this, charList, charIcons);
       ListView listView = (ListView) findViewById(R.id.charListView);
       listView.setAdapter(adapter);
+      listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+          Intent intent = new Intent(MainActivity.this, CharActivity.class);
+          MainActivity.this.startActivity(intent);
+        }
+      });
     } catch (InterruptedException | ExecutionException e) {
-      e.printStackTrace();
+      Log.d("debug", e.getMessage());
     }
-
-    for (Character character : characterList) {
-      new CharacterIconTask(this).execute(character.getCharacterId(), "256");
-    }
-
   }
 
   @Override

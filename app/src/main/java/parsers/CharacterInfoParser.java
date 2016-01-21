@@ -36,18 +36,18 @@ public class CharacterInfoParser extends DefaultHandler {
       SAXParser parser = factory.newSAXParser();
       parser.parse(inputStream, this);
     } catch (ParserConfigurationException | SAXException | IOException e) {
-//      Log.d("Response", "ERROR PARSE DOCUMENT");
+      Log.d("debug", e.getMessage());
     }
   }
 
   @Override
   public void startDocument() throws SAXException {
-//    Log.d("parser", "****** START CHARACTER_INFO PARSING ******");
+    Log.d("debug", getClass().getName() + "::START CHARACTER_INFO PARSING");
   }
 
   @Override
   public void endDocument() throws SAXException {
-//    Log.d("parser", "****** END CHARACTER_INFO PARSING ******");
+    Log.d("debug", getClass().getName() + "::END CHARACTER_INFO PARSING");
   }
 
   @Override
@@ -111,7 +111,7 @@ public class CharacterInfoParser extends DefaultHandler {
   }
 
   public void printData() {
-//    Log.d("Response", character.toString());
+    Log.d("debug", getClass().getName() + "::Character: " + character.toString());
   }
 
   public class EmploymentHistory {

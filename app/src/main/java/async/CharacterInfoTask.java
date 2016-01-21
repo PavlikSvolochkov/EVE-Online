@@ -1,6 +1,7 @@
 package async;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.IOException;
 import java.net.URL;
@@ -41,7 +42,7 @@ public class CharacterInfoTask extends AsyncTask<String, Void, Void> {
       parser.parseDocument();
       parser.printData();
     } catch (IOException e) {
-      e.printStackTrace();
+      Log.d("debug", e.getMessage());
     }
     return null;
   }
@@ -56,7 +57,7 @@ public class CharacterInfoTask extends AsyncTask<String, Void, Void> {
     try {
       viewHolder.balance.append(String.valueOf(new AccountBalanceTask("").execute().get().getBalance()));
     } catch (InterruptedException | ExecutionException e) {
-      e.printStackTrace();
+      Log.d("debug", e.getMessage());
     }
   }
 }

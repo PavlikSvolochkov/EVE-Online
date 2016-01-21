@@ -1,6 +1,7 @@
 package async;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.IOException;
 import java.net.URL;
@@ -43,7 +44,7 @@ public class AccountBalanceTask extends AsyncTask<Void, AccountBalance, AccountB
       parser.printData();
       balance = parser.getBalance();
     } catch (IOException e) {
-      e.printStackTrace();
+      Log.d("debug", e.getMessage());
     }
     return balance;
   }
