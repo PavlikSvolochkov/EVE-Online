@@ -28,24 +28,24 @@ public class AccountBalanceParser extends DefaultHandler {
   public void parseDocument() {
     SAXParserFactory factory = SAXParserFactory.newInstance();
     try {
-      Log.d("Response", "Creating parser...");
+      Log.d("debug", getClass().getName() + "::Creating parser...");
       SAXParser parser = factory.newSAXParser();
-      Log.d("Response", "Parse document...");
+      Log.d("debug", getClass().getName() + "::Parse document...");
       parser.parse(inputStream, this);
       printData();
     } catch (ParserConfigurationException | SAXException | IOException e) {
-      Log.d("Response", "ERROR PARSE DOCUMENT");
+      Log.d("debug", e.getMessage());
     }
   }
 
   @Override
   public void startDocument() throws SAXException {
-    Log.d("parser", "START DOCUMENT PARSING (ACCOUNT BALANCE)");
+    Log.d("debug", getClass().getName() + "::START DOCUMENT PARSING (ACCOUNT BALANCE)");
   }
 
   @Override
   public void endDocument() throws SAXException {
-    Log.d("parser", "END DOCUMENT PARSING (ACCOUNT BALANCE)");
+    Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING (ACCOUNT BALANCE)");
   }
 
   @Override
@@ -73,6 +73,6 @@ public class AccountBalanceParser extends DefaultHandler {
   }
 
   public void printData() {
-    Log.d("Response", "Balance: " + balance.toString());
+    Log.d("debug", getClass().getName() + "::Balance: " + balance.toString());
   }
 }

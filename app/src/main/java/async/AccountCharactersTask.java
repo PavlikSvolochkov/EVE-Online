@@ -5,12 +5,10 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import logic.*;
 import parsers.AccountCharactersParser;
 
 public class AccountCharactersTask extends AsyncTask<Void, List, List> {
@@ -19,12 +17,10 @@ public class AccountCharactersTask extends AsyncTask<Void, List, List> {
           "?keyID=4744217" +
           "&vCODE=7VHnHgo7X02AmGVUK8QSKHJ9xb0KD3zaVQ15zNGARZGiMgguWL3825TAkgAWWuK9";
 
-  private List<AccountCharacter> characterList;
-
   private AccountCharactersParser parser;
 
   public AccountCharactersTask() {
-    this.characterList = new ArrayList<>();
+
   }
 
   @Override
@@ -39,14 +35,14 @@ public class AccountCharactersTask extends AsyncTask<Void, List, List> {
     HttpsURLConnection con;
     try {
       url = new URL(CHARACTERS);
-      Log.d("Response", "Opening connection...");
+      Log.d("debug", "Opening connection...");
       con = (HttpsURLConnection) url.openConnection();
-      Log.d("Response", "Connection opened");
+      Log.d("debug", "Connection opened");
       parser = new AccountCharactersParser(con.getInputStream());
       parser.parseDocument();
       parser.printData();
     } catch (IOException e) {
-      e.printStackTrace();
+      Log.d("debug", e.getMessage());
     }
     return parser.getCharList();
   }

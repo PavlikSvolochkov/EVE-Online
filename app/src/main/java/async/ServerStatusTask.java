@@ -2,6 +2,7 @@ package async;
 
 import android.graphics.Color;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ import javax.net.ssl.HttpsURLConnection;
 import logic.ServerStatus;
 import parsers.ServerStatusParser;
 
-public class ServerStatusTask extends AsyncTask<Void, Void, Void> {
+public class ServerStatusTask extends AsyncTask<Void, Void, ServerStatus> {
 
   private final String SERVER_STATUS = "https://api.eveonline.com/server/ServerStatus.xml.aspx";
 
@@ -33,7 +34,7 @@ public class ServerStatusTask extends AsyncTask<Void, Void, Void> {
   }
 
   @Override
-  protected Void doInBackground(Void... params) {
+  protected ServerStatus doInBackground(Void... params) {
     URL url;
     HttpsURLConnection con;
     try {
@@ -44,13 +45,13 @@ public class ServerStatusTask extends AsyncTask<Void, Void, Void> {
       parser.printStatus();
       serverStatus = parser.getStatus();
     } catch (IOException e) {
-      e.printStackTrace();
+      Log.d("debug", e.getMessage());
     }
-    return null;
+    return serverStatus;
   }
 
   @Override
-  protected void onPostExecute(Void aVoid) {
+  protected void onPostExecute(ServerStatus aVoid) {
     if ("True".equals(serverStatus.getStatus())) {
       status.setTextColor(Color.GREEN);
       status.setText("Online");
@@ -58,6 +59,7 @@ public class ServerStatusTask extends AsyncTask<Void, Void, Void> {
     } else {
       status.setTextColor(Color.RED);
       status.setText("Offline");
+      players.setText("Offline");
     }
   }
 }

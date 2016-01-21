@@ -2,8 +2,6 @@ package adapters;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.File;
 import java.util.List;
 
 import logic.Character;
@@ -32,11 +29,13 @@ public class AccountCharactersAdapter extends BaseAdapter {
   private Activity activity;
   private LayoutInflater inflater;
 
+  private List<Bitmap> charIcons;
 
-  public AccountCharactersAdapter(Activity activity, List<logic.Character> values) {
+  public AccountCharactersAdapter(Activity activity, List<logic.Character> values, List<Bitmap> charIcons) {
     super();
     this.characters = values;
     this.activity = activity;
+    this.charIcons = charIcons;
   }
 
   @Override
@@ -62,11 +61,7 @@ public class AccountCharactersAdapter extends BaseAdapter {
     balance.setText("Balance: " + character.getBalance());
     training.setText(character.getFreeRespecs());
 
-    File image = new File(character.getCharacterId() + "_256.jpeg");
-
-    BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-    Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath(), bmOptions);
-    charIcon.setImageBitmap(bitmap);
+//    charIcon.setImageBitmap();
 
     return convertView;
   }

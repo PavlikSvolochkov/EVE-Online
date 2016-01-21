@@ -1,5 +1,7 @@
 package parsers;
 
+import android.util.Log;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -30,19 +32,19 @@ public class AccountCharactersParser extends DefaultHandler {
   public void parseDocument() {
     SAXParserFactory factory = SAXParserFactory.newInstance();
     try {
-//      Log.d("Response", "Creating parser...");
+      Log.d("debug", getClass().getName() + "::Creating parser...");
       SAXParser parser = factory.newSAXParser();
-//      Log.d("Response", "Parse document...");
+      Log.d("debug", getClass().getName() + "::Parse document...");
       parser.parse(inputStream, this);
-//      printData();
+      printData();
     } catch (ParserConfigurationException | SAXException | IOException e) {
-//      Log.d("Response", "ERROR PARSE DOCUMENT");
+      Log.d("debug", e.getMessage());
     }
   }
 
   @Override
   public void startDocument() throws SAXException {
-//    Log.d("Response", "START DOCUMENT PARSING (ACCOUNT CHARACTERS)");
+    Log.d("debug", getClass().getName() + "::START DOCUMENT PARSING (ACCOUNT CHARACTERS)");
   }
 
   @Override
@@ -77,12 +79,12 @@ public class AccountCharactersParser extends DefaultHandler {
 
   @Override
   public void endDocument() throws SAXException {
-//    Log.d("Response", "END DOCUMENT PARSING (ACCOUNT CHARACTERS)");
+    Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING (ACCOUNT CHARACTERS)");
   }
 
   public void printData() {
     for (AccountCharacter character : characterList) {
-//      Log.d("Response", character.toString());
+      Log.d("debug", getClass().getName() + "::Character: " + character.toString());
       System.out.println(character.toString());
     }
   }
