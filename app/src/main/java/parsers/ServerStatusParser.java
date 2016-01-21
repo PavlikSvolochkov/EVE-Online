@@ -30,7 +30,7 @@ public class ServerStatusParser extends DefaultHandler {
     try {
       Log.d("debug", getClass().getName() + "::Creating parser...");
       SAXParser parser = factory.newSAXParser();
-      Log.d("Response", getClass().getName() + "::Parse document...");
+      Log.d("debug", getClass().getName() + "::Parse document...");
       parser.parse(inputStream, this);
     } catch (ParserConfigurationException | SAXException | IOException e) {
       Log.d("debug", e.getMessage());

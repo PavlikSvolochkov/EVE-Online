@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
 import async.SkillInTrainingTask;
+import async.TypeNameTask;
 import logic.SkillInTraining;
 
 public class CharActivity extends AppCompatActivity {
@@ -21,6 +22,10 @@ public class CharActivity extends AppCompatActivity {
 
   private TextView skillTrainTV;
   private TextView skillEndTimeTV;
+
+  private static String TimeStampConverter(final String inputFormat, String inputTimeStamp, final String outputFormat) throws ParseException {
+    return new SimpleDateFormat(outputFormat).format(new SimpleDateFormat(inputFormat).parse(inputTimeStamp));
+  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +37,10 @@ public class CharActivity extends AppCompatActivity {
 
     try {
       skill = new SkillInTrainingTask(skillTrainTV).execute().get();
+      skillTrainTV.setText(new TypeNameTask(skill.getTrainingTypeID()).execute().get() + "* " + skill.getTrainingToLevel());
     } catch (InterruptedException | ExecutionException e) {
       Log.d("debug", e.getMessage());
     }
-    skillTrainTV.setText(skill.getTrainingTypeID() + "* " + skill.getTrainingToLevel());
-
 
     try {
       SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -65,10 +69,6 @@ public class CharActivity extends AppCompatActivity {
     } catch (ParseException e) {
       e.printStackTrace();
     }
-  }
-
-  private static String TimeStampConverter(final String inputFormat, String inputTimeStamp, final String outputFormat) throws ParseException {
-    return new SimpleDateFormat(outputFormat).format(new SimpleDateFormat(inputFormat).parse(inputTimeStamp));
   }
 
 }
