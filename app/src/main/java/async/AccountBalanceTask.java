@@ -44,7 +44,7 @@ public class AccountBalanceTask extends AsyncTask<Void, AccountBalance, AccountB
       parser.printData();
       balance = parser.getBalance();
     } catch (IOException e) {
-      Log.d("debug", e.getMessage());
+      Log.e("debug", e.getMessage());
     }
     return balance;
   }

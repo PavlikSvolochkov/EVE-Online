@@ -34,7 +34,7 @@ public class CharacterIconTask extends AsyncTask<String, Void, List> {
         bitmapList.add(bitmap);
       }
     } catch (IOException e) {
-      Log.d("debug", e.getMessage());
+      Log.e("debug", e.getMessage());
     }
     return bitmapList;
   }

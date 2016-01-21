@@ -45,7 +45,7 @@ public class SkillInTrainingTask extends AsyncTask<Void, Void, SkillInTraining> 
       skill = parser.getSkill();
       Log.d("debug", getClass().getName() + "::Skill: " + skill.toString());
     } catch (IOException e) {
-      Log.d("debug", e.getMessage());
+      Log.e("debug", e.getMessage());
     }
     return skill;
   }

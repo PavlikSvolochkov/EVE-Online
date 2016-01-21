@@ -48,7 +48,7 @@ public class CharacterSheetTask extends AsyncTask<Void, List, List> {
         charSheetParser.printData();
       }
     } catch (Exception e) {
-      Log.d("debug", e.getMessage());
+      Log.e("debug", e.getMessage());
     }
 
     return charSheetParser.getCharList();

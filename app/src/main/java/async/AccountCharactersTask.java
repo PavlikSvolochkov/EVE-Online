@@ -35,14 +35,14 @@ public class AccountCharactersTask extends AsyncTask<Void, List, List> {
     HttpsURLConnection con;
     try {
       url = new URL(CHARACTERS);
-      Log.d("debug", "Opening connection...");
+      Log.d("debug", getClass().getName() + "::Opening connection...");
       con = (HttpsURLConnection) url.openConnection();
-      Log.d("debug", "Connection opened");
+      Log.d("debug", getClass().getName() + "::Connection opened");
       parser = new AccountCharactersParser(con.getInputStream());
       parser.parseDocument();
       parser.printData();
     } catch (IOException e) {
-      Log.d("debug", e.getMessage());
+      Log.e("debug", e.getMessage());
     }
     return parser.getCharList();
   }

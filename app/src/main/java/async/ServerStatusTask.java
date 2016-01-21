@@ -45,7 +45,7 @@ public class ServerStatusTask extends AsyncTask<Void, Void, ServerStatus> {
       parser.printStatus();
       serverStatus = parser.getStatus();
     } catch (IOException e) {
-      Log.d("debug", e.getMessage());
+      Log.e("debug", e.getMessage());
     }
     return serverStatus;
   }

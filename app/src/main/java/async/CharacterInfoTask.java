@@ -42,7 +42,7 @@ public class CharacterInfoTask extends AsyncTask<String, Void, Void> {
       parser.parseDocument();
       parser.printData();
     } catch (IOException e) {
-      Log.d("debug", e.getMessage());
+      Log.e("debug", e.getMessage());
     }
     return null;
   }
@@ -57,7 +57,7 @@ public class CharacterInfoTask extends AsyncTask<String, Void, Void> {
     try {
       viewHolder.balance.append(String.valueOf(new AccountBalanceTask("").execute().get().getBalance()));
     } catch (InterruptedException | ExecutionException e) {
-      Log.d("debug", e.getMessage());
+      Log.e("debug", e.getMessage());
     }
   }
 }
