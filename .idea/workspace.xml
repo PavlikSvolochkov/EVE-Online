@@ -55,6 +55,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EVEOnline.iml" afterPath="$PROJECT_DIR$/EVEOnline.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <list id="e3a29941-5252-4889-930c-9c55321fb1e2" name="add new images" comment="" />
     <ignored path="EVE-Online.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,7 +70,7 @@
     <SUITE FILE_PATH="coverage/EVE-Online$AccountCharactersTest.coverage" NAME="AccountCharactersTest Coverage Results" MODIFIED="1453208586495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="D:\dev\android\EVEOnline" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExternalProjectsManager">
@@ -156,6 +157,9 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="availableProjects">
@@ -1997,6 +2001,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="9029edf2-f4fe-44f0-9166-84443890f85c" name="Default" comment="" />
+      <changelist id="e3a29941-5252-4889-930c-9c55321fb1e2" name="add new images" comment="" />
       <created>1453206475153</created>
       <option name="number" value="Default" />
       <updated>1453206475153</updated>
@@ -2031,7 +2036,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453376803920</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add .png files">
+      <created>1453377000962</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1453377000962</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
