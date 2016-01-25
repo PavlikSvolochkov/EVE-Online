@@ -28,7 +28,7 @@ public class SkillInTrainingParser extends DefaultHandler {
   public void parseDocument() {
     SAXParserFactory factory = SAXParserFactory.newInstance();
     try {
-      Log.d("debug", getClass().getName() + "::Creating parser...");
+      Log.d("debug", getClass().getName() + "::Creating SkillInTrainingParser...");
       SAXParser parser = factory.newSAXParser();
       Log.d("debug", getClass().getName() + "::Parse document...");
       parser.parse(inputStream, this);

@@ -28,7 +28,9 @@ public class CharacterInfoParser extends DefaultHandler {
   public void parseDocument() {
     SAXParserFactory factory = SAXParserFactory.newInstance();
     try {
+      Log.d("debug", getClass().getName() + "::Creating CharacterInfoParser...");
       SAXParser parser = factory.newSAXParser();
+      Log.d("debug", getClass().getName() + "::Parse document...");
       parser.parse(inputStream, this);
     } catch (ParserConfigurationException | SAXException | IOException e) {
       Log.d("debug", e.getMessage());

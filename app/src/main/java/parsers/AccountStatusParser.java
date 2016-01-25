@@ -29,7 +29,9 @@ public class AccountStatusParser extends DefaultHandler {
   public void parseDocument() {
     SAXParserFactory factory = SAXParserFactory.newInstance();
     try {
+      Log.d("debug", getClass().getName() + "::Creating AccountStatusParser...");
       SAXParser parser = factory.newSAXParser();
+      Log.d("debug", getClass().getName() + "::Parse document...");
       parser.parse(inputStream, this);
     } catch (ParserConfigurationException | SAXException | IOException e) {
       Log.d("debug", e.getMessage());

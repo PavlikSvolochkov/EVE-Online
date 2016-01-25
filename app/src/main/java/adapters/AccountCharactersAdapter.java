@@ -24,7 +24,8 @@ public class AccountCharactersAdapter extends BaseAdapter {
 
   private ImageView charIcon;
 
-  private List<CharacterInfo> characters;
+  private CharacterInfo character;
+  private List<CharacterInfo> charInfoList;
 
   private Activity activity;
   private LayoutInflater inflater;
@@ -33,7 +34,7 @@ public class AccountCharactersAdapter extends BaseAdapter {
 
   public AccountCharactersAdapter(Activity activity, List<logic.CharacterInfo> values, List<Bitmap> charIcons) {
     super();
-    this.characters = values;
+    this.charInfoList = values;
     this.activity = activity;
     this.charIcons = charIcons;
   }
@@ -53,7 +54,7 @@ public class AccountCharactersAdapter extends BaseAdapter {
       charIcon = (ImageView) convertView.findViewById(R.id.charIcon);
     }
 
-    CharacterInfo character = characters.get(position);
+    character = charInfoList.get(position);
 
     charName.setText(character.getCharacterName());
     corpName.setText(character.getCorporation());
@@ -68,12 +69,12 @@ public class AccountCharactersAdapter extends BaseAdapter {
 
   @Override
   public int getCount() {
-    return characters.size();
+    return charInfoList.size();
   }
 
   @Override
   public Object getItem(int position) {
-    return characters.get(position);
+    return charInfoList.get(position);
   }
 
   @Override

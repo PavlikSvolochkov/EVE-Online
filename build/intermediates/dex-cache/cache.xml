@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/home/ulysses/dev/Android/EVE-Online/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/home/ulysses/dev/Android/EVE-Online/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-42322d7b053f5389355aa3a1062c826e42266138.jar" />
-    </item>
-    <item
-        jar="/home/ulysses/dev/Android/EVE-Online/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/home/ulysses/dev/Android/EVE-Online/app/build/intermediates/pre-dexed/debug/classes-1292f9ad16676db19ea891312d1e373b8cec7ebd.jar" />
-    </item>
-    <item
-        jar="/home/ulysses/dev/Android/EVE-Online/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jar="D:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="/home/ulysses/dev/Android/EVE-Online/app/build/intermediates/pre-dexed/debug/classes-9983afd4252c1159997f52bd94065f67419161f5.jar" />
+        <dex dex="D:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\classes-0f01a005374a738b6440d89a259c2a214ed50e00.jar" />
     </item>
     <item
-        jar="/home/ulysses/dev/Android/EVE-Online/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jar="D:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="/home/ulysses/dev/Android/EVE-Online/app/build/intermediates/pre-dexed/debug/classes-f9522d8bd7008b0e2ec12bbce804a5185912466e.jar" />
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="D:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-9650d1d713e573a35e28a84f5fa8145ed48f9d39.jar" />
     </item>
     <item
-        jar="/home/ulysses/dev/Android/AndroidSDK/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jar="D:\dev\libs\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/home/ulysses/dev/Android/EVE-Online/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-4b578091a259f01bf813c05c0e018a15eff6d292.jar" />
+        <dex dex="D:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-af04709aa976c2990c1f4856ea87e3c8d17cff2c.jar" />
+    </item>
+    <item
+        jar="D:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="D:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\classes-3e3af30fac21305eef0ef3fe1d6db146876e067e.jar" />
+    </item>
+    <item
+        jar="D:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="D:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\classes-e1eba168e259f41fd15a189a9288d46a4c231650.jar" />
     </item>
 
 </items>

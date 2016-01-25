@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
       serverStatus = new ServerStatusTask(statusTV, playersTV).execute().get();
 
       accCharList = new AccountCharactersTask().execute().get();
-      charList = new CharacterSheetTask(accCharList).execute().get();
+//      charList = new CharacterSheetTask(accCharList).execute().get();
 
       for (AccountCharacter character : accCharList) {
         charList.add(new CharacterInfoTask(character.getCharacterID()).execute().get());
