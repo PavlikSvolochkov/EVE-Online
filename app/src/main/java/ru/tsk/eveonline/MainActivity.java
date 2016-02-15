@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
   private TextView statusTV;
   private TextView playersTV;
   private ListView listView;
+  private Button openSkillBtn;
 
   private AccountCharactersAdapter adapter;
 
@@ -66,37 +68,46 @@ public class MainActivity extends AppCompatActivity {
     statusTV = (TextView) findViewById(R.id.serverStatus);
     playersTV = (TextView) findViewById(R.id.onlinePlayers);
 
-    listView = (ListView) findViewById(R.id.charListView);
-    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    openSkillBtn = (Button) findViewById(R.id.openSkillsBtn);
+    openSkillBtn.setOnClickListener(new View.OnClickListener() {
       @Override
-      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-        Intent intent = new Intent(MainActivity.this, CharActivity.class);
-
-        intent.putExtra("ID", charList.get(position).getCharacterID());
-        intent.putExtra("CHAR_NAME", charList.get(position).getCharacterName());
-        intent.putExtra("BALANCE", charList.get(position).getAccountBalance());
-        intent.putExtra("SKILL_POINTS", charList.get(position).getSkillPoints());
-
-        MainActivity.this.startActivity(intent);
+      public void onClick(View v) {
+        Intent intent = new Intent(MainActivity.this, SkillQueueActivity.class);
+        startActivity(intent);
       }
     });
-
+//
+//    listView = (ListView) findViewById(R.id.charListView);
+//    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//      @Override
+//      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//        Intent intent = new Intent(MainActivity.this, CharActivity.class);
+//
+//        intent.putExtra("ID", charList.get(position).getCharacterID());
+//        intent.putExtra("CHAR_NAME", charList.get(position).getCharacterName());
+//        intent.putExtra("BALANCE", charList.get(position).getAccountBalance());
+//        intent.putExtra("SKILL_POINTS", charList.get(position).getSkillPoints());
+//
+//        MainActivity.this.startActivity(intent);
+//      }
+//    });
+//
     try {
-
+//
       serverStatus = new ServerStatusTask(statusTV, playersTV).execute().get();
-
-      accCharList = new AccountCharactersTask().execute().get();
-//      charList = new CharacterSheetTask(accCharList).execute().get();
-
-      for (AccountCharacter character : accCharList) {
-        charList.add(new CharacterInfoTask(character.getCharacterID()).execute().get());
-        charIcons.add(new CharacterIconTask(character.getCharacterID(), "char", "512").execute().get());
-      }
-
-      adapter = new AccountCharactersAdapter(this, charList, charIcons);
-      listView.setAdapter(adapter);
-
+//
+//      accCharList = new AccountCharactersTask().execute().get();
+////      charList = new CharacterSheetTask(accCharList).execute().get();
+//
+//      for (AccountCharacter character : accCharList) {
+//        charList.add(new CharacterInfoTask(character.getCharacterID()).execute().get());
+//        charIcons.add(new CharacterIconTask(character.getCharacterID(), "char", "512").execute().get());
+//      }
+//
+//      adapter = new AccountCharactersAdapter(this, charList, charIcons);
+//      listView.setAdapter(adapter);
+//
     } catch (InterruptedException | ExecutionException e) {
       Log.d("debug", e.getMessage());
     }

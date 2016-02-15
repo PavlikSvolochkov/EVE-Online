@@ -80,4 +80,10 @@ public class SkillQueueParser extends DefaultHandler {
   public List<SkillQueueItem> getItems() {
     return items;
   }
+
+  public void printQueue() {
+    for (SkillQueueItem item : items) {
+      Log.d("debug", item.toString());
+    }
+  }
 }

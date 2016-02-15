@@ -10,8 +10,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ru.tsk.eveonline.SkillQueueActivity">
 
+  <TextView
+      android:id="@+id/simpleText"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Hello SkillQueue!!!"/>
+
   <ListView
       android:id="@+id/skillQueue"
+      android:layout_below="@+id/simpleText"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"/>
 
