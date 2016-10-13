@@ -10,26 +10,25 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import logic.APIKey;
 import logic.SkillQueueItem;
 import parsers.SkillQueueParser;
 
 public class SkillQueueTask extends AsyncTask<Void, Void, List<SkillQueueItem>> {
 
-    private static String KEY_ID = "5040468";
-    private static String vCODE = "Dw46k2jB9N5MHe15BcTdpBumTKFpBauFWP2eoWk3hRoPUn4zLKPmJuaMmbIfEoro";
     private static String CHAR_ID = "95767126";
 
-    private static final String SKILL_QUEUE = "https://api.eveonline.com/char/SkillQueue.xml.aspx?"
-            + "keyID=" + KEY_ID
-            + "&vCODE=" + vCODE
+    private static final String SKILL_QUEUE = "https://api.eveonline.com/char/SkillQueue.xml.aspx"
+            + APIKey.API_KEY
+            + APIKey.vCODE
             + "&characterID=" + CHAR_ID;
 
-    private List<SkillQueueItem> items;
+    private List<SkillQueueItem> queueItemList;
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        items = new ArrayList<>();
+        queueItemList = new ArrayList<>();
     }
 
     @Override
@@ -42,11 +41,11 @@ public class SkillQueueTask extends AsyncTask<Void, Void, List<SkillQueueItem>> 
             SkillQueueParser parser = new SkillQueueParser(con.getInputStream());
             parser.parseDocument();
             parser.printQueue();
-            items = parser.getItems();
+            queueItemList = parser.getItems();
         } catch (IOException e) {
             Log.e("debug", e.getMessage());
         }
-        return items;
+        return queueItemList;
     }
 
     @Override

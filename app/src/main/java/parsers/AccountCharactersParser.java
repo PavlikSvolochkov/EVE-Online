@@ -79,7 +79,7 @@ public class AccountCharactersParser extends DefaultHandler {
 
     @Override
     public void endDocument() throws SAXException {
-//    Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING (ACCOUNT CHARACTERS)");
+        Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING (ACCOUNT CHARACTERS)");
     }
 
     public void printData() {

@@ -8,19 +8,15 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import logic.APIKey;
 import logic.AccountCharacter;
 import parsers.AccountCharactersParser;
 import parsers.CharacterSheetParser;
 
 public class CharacterSheetTask extends AsyncTask<Void, List, List> {
 
-    private static String KEY_ID = "5040468";
-    private static String vCODE = "Dw46k2jB9N5MHe15BcTdpBumTKFpBauFWP2eoWk3hRoPUn4zLKPmJuaMmbIfEoro";
-
-    private static final String CHARACTER_LIST = "https://api.eveonline.com/account/characters.xml.aspx" + KEY_ID + vCODE;
-    private static final String CHARACTER = "https://api.eveonline.com/char/CharacterSheet.xml.aspx"
-            + "?keyID=" + KEY_ID
-            + "&vCODE=" + vCODE;
+    private static final String CHARACTER_LIST = "https://api.eveonline.com/account/characters.xml.aspx" + APIKey.API_KEY + APIKey.vCODE;
+    private static final String CHARACTER = "https://api.eveonline.com/char/CharacterSheet.xml.aspx" + APIKey.API_KEY + APIKey.vCODE;
 
     private List<AccountCharacter> accCharList;
 

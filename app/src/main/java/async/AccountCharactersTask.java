@@ -9,23 +9,15 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import logic.APIKey;
 import logic.AccountCharacter;
 import parsers.AccountCharactersParser;
 
 public class AccountCharactersTask extends AsyncTask<Void, List, List> {
 
-    private static String KEY_ID = "5040468";
-    private static String vCODE = "Dw46k2jB9N5MHe15BcTdpBumTKFpBauFWP2eoWk3hRoPUn4zLKPmJuaMmbIfEoro";
-
-    private static final String CHARACTERS = "https://api.eveonline.com/account/characters.xml.aspx" +
-            "?keyID=" + KEY_ID +
-            "&vCODE=" + vCODE;
+    private static final String CHARACTERS = "https://api.eveonline.com/account/characters.xml.aspx" + APIKey.API_KEY + APIKey.vCODE;
 
     private AccountCharactersParser parser;
-
-    public AccountCharactersTask() {
-
-    }
 
     @Override
     protected void onPreExecute() {
@@ -34,7 +26,6 @@ public class AccountCharactersTask extends AsyncTask<Void, List, List> {
 
     @Override
     protected List<AccountCharacter> doInBackground(Void... params) {
-
         URL url;
         HttpsURLConnection con;
         try {
@@ -49,10 +40,5 @@ public class AccountCharactersTask extends AsyncTask<Void, List, List> {
             Log.e("debug", e.getMessage());
         }
         return parser.getCharList();
-    }
-
-    @Override
-    protected void onPostExecute(List aVoid) {
-
     }
 }

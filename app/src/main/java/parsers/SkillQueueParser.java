@@ -87,7 +87,6 @@ public class SkillQueueParser extends DefaultHandler {
 
     public void printQueue() {
         for (SkillQueueItem item : items) {
-//      System.out.println(item.toString());
             Log.d("debug", item.toString());
         }
     }

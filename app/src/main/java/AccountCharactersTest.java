@@ -4,15 +4,15 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import logic.APIKeyInfo;
+import logic.APIKey;
 import logic.AccountCharacter;
 import parsers.AccountCharactersParser;
 import parsers.CharacterSheetParser;
 
 public class AccountCharactersTest {
 
-    private static final String CHARACTER_LIST = "https://api.eveonline.com/account/characters.xml.aspx" + APIKeyInfo.API_KEY + APIKeyInfo.vCODE;
-    private static final String CHARACTER = "https://api.eveonline.com/char/CharacterSheet.xml.aspx" + APIKeyInfo.API_KEY + APIKeyInfo.vCODE;
+    private static final String CHARACTER_LIST = "https://api.eveonline.com/account/characters.xml.aspx" + APIKey.API_KEY + APIKey.vCODE;
+    private static final String CHARACTER = "https://api.eveonline.com/char/CharacterSheet.xml.aspx" + APIKey.API_KEY + APIKey.vCODE;
 
     public static void main(String[] args) throws IOException {
         URL url = new URL(CHARACTER_LIST);

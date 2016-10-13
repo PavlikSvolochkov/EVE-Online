@@ -26,11 +26,6 @@ public class TypeNameTask extends AsyncTask<Void, String, String> {
     }
 
     @Override
-    protected void onPreExecute() {
-        super.onPreExecute();
-    }
-
-    @Override
     protected String doInBackground(Void... params) {
         URL url;
         HttpsURLConnection con;
@@ -45,10 +40,5 @@ public class TypeNameTask extends AsyncTask<Void, String, String> {
             Log.e("debug", e.getMessage());
         }
         return typeName.getTypeName();
-    }
-
-    @Override
-    protected void onPostExecute(String types) {
-
     }
 }

@@ -8,15 +8,15 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import logic.APIKey;
 import logic.AccountBalance;
 import parsers.AccountBalanceParser;
 
 public class AccountBalanceTask extends AsyncTask<Void, AccountBalance, AccountBalance> {
 
-    private final String ACCOUNT_BALANCE = "https://api.eveonline.com/char/AccountBalance.xml.aspx?" +
-            "keyID=4744217" +
-            "&vCODE=7VHnHgo7X02AmGVUK8QSKHJ9xb0KD3zaVQ15zNGARZGiMgguWL3825TAkgAWWuK9" +
-            "&characterID=95767126";
+    private final String ACCOUNT_BALANCE = "https://api.eveonline.com/char/AccountBalance.xml.aspx"
+            + APIKey.API_KEY + APIKey.vCODE
+            + "&characterID=95767126";
 
     private String characterId;
 
@@ -25,11 +25,6 @@ public class AccountBalanceTask extends AsyncTask<Void, AccountBalance, AccountB
 
     public AccountBalanceTask(String charId) {
         this.characterId = charId;
-    }
-
-    @Override
-    protected void onPreExecute() {
-
     }
 
     @Override
@@ -47,10 +42,5 @@ public class AccountBalanceTask extends AsyncTask<Void, AccountBalance, AccountB
             Log.e("debug", e.getMessage());
         }
         return balance;
-    }
-
-    @Override
-    protected void onPostExecute(AccountBalance o) {
-        super.onPostExecute(o);
     }
 }

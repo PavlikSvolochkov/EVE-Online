@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import adapters.AccountCharactersAdapter;
+import async.CharacterIconTask;
+import async.CharacterInfoTask;
 import async.CharacterSheetTask;
 import async.ServerStatusTask;
 import logic.AccountCharacter;
@@ -97,10 +99,10 @@ public class MainActivity extends AppCompatActivity {
 //      accCharList = new AccountCharactersTask().execute().get();
             charList = new CharacterSheetTask(accCharList).execute().get();
 
-//      for (AccountCharacter character : accCharList) {
-//        charList.add(new CharacterInfoTask(character.getCharacterID()).execute().get());
-//        charIcons.add(new CharacterIconTask(character.getCharacterID(), "char", "512").execute().get());
-//      }
+            for (AccountCharacter character : accCharList) {
+                charList.add(new CharacterInfoTask(character.getCharacterID()).execute().get());
+                charIcons.add(new CharacterIconTask(character.getCharacterID(), "char", "512").execute().get());
+            }
 
             adapter = new AccountCharactersAdapter(this, charList, charIcons);
             listView.setAdapter(adapter);

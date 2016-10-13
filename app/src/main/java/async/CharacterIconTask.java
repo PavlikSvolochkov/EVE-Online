@@ -56,8 +56,4 @@ public class CharacterIconTask extends AsyncTask<String, Void, Bitmap> {
         }
         return bitmap;
     }
-
-    protected void onPostExecute(Bitmap result) {
-
-    }
 }

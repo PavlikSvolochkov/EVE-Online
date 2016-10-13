@@ -29,11 +29,6 @@ public class ServerStatusTask extends AsyncTask<Void, Void, ServerStatus> {
     }
 
     @Override
-    protected void onPreExecute() {
-        super.onPreExecute();
-    }
-
-    @Override
     protected ServerStatus doInBackground(Void... params) {
         URL url;
         HttpsURLConnection con;
