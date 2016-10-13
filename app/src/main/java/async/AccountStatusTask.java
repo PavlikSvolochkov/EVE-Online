@@ -1,20 +1,39 @@
 package async;
 
 import android.os.AsyncTask;
+import android.util.Log;
+
+import java.io.IOException;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
+
+import logic.APIKey;
+import logic.AccountStatus;
+import parsers.AccountStatusParser;
 
 
-public class AccountStatusTask extends AsyncTask<Void, Void, Void> {
+public class AccountStatusTask extends AsyncTask<Void, Void, AccountStatus> {
 
-    public AccountStatusTask() {
-    }
+    private final String ACCOUNT_STATUS = "https://api.eveonline.com/account/AccountStatus.xml.aspx"
+            + APIKey.API_KEY + APIKey.vCODE;
+
+    private AccountStatus status;
+    private AccountStatusParser statusParser;
 
     @Override
-    protected Void doInBackground(Void... params) {
-        return null;
-    }
-
-    @Override
-    protected void onPostExecute(Void aVoid) {
-        super.onPostExecute(aVoid);
+    protected AccountStatus doInBackground(Void... params) {
+        URL url;
+        HttpsURLConnection con;
+        try {
+            url = new URL(ACCOUNT_STATUS);
+            con = (HttpsURLConnection) url.openConnection();
+            statusParser = new AccountStatusParser(con.getInputStream());
+            statusParser.parseDocument();
+            status = statusParser.getAccountStatus();
+        } catch (IOException e) {
+            Log.e("debug", e.getMessage());
+        }
+        return status;
     }
 }

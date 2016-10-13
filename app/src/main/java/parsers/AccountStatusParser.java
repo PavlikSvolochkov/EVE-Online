@@ -13,14 +13,14 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import logic.Account;
+import logic.AccountStatus;
 
 public class AccountStatusParser extends DefaultHandler {
 
     private String tempValue;
 
     private InputStream inputStream;
-    private Account account;
+    private AccountStatus accountStatus;
 
     public AccountStatusParser(InputStream stream) {
         this.inputStream = stream;
@@ -46,7 +46,7 @@ public class AccountStatusParser extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if (qName.equalsIgnoreCase("paidUntil")) {
-            account = new Account();
+            accountStatus = new AccountStatus();
         }
     }
 
@@ -58,16 +58,16 @@ public class AccountStatusParser extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         if (qName.equalsIgnoreCase("paidUntil")) {
-            account.setPaidUntil(tempValue);
+            accountStatus.setPaidUntil(tempValue);
         }
         if (qName.equalsIgnoreCase("createDate")) {
-            account.setCreateDate(tempValue);
+            accountStatus.setCreateDate(tempValue);
         }
         if (qName.equalsIgnoreCase("logonCount")) {
-            account.setLogonCount(tempValue);
+            accountStatus.setLogonCount(tempValue);
         }
         if (qName.equalsIgnoreCase("logonMinutes")) {
-            account.setLogonMinutes(tempValue);
+            accountStatus.setLogonMinutes(tempValue);
         }
     }
 
@@ -76,7 +76,7 @@ public class AccountStatusParser extends DefaultHandler {
         Log.d("debug", getClass().getName() + "::END PARSE ACCOUNT STATUS");
     }
 
-    public Account getAccount() {
-        return account;
+    public AccountStatus getAccountStatus() {
+        return accountStatus;
     }
 }

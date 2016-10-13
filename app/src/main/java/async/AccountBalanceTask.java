@@ -12,31 +12,24 @@ import logic.APIKey;
 import logic.AccountBalance;
 import parsers.AccountBalanceParser;
 
-public class AccountBalanceTask extends AsyncTask<Void, AccountBalance, AccountBalance> {
+public class AccountBalanceTask extends AsyncTask<String, AccountBalance, AccountBalance> {
 
     private final String ACCOUNT_BALANCE = "https://api.eveonline.com/char/AccountBalance.xml.aspx"
             + APIKey.API_KEY + APIKey.vCODE
-            + "&characterID=95767126";
-
-    private String characterId;
+            + "&characterID=";
 
     private AccountBalance balance;
     private AccountBalanceParser parser;
 
-    public AccountBalanceTask(String charId) {
-        this.characterId = charId;
-    }
-
     @Override
-    protected AccountBalance doInBackground(Void... v) {
+    protected AccountBalance doInBackground(String... account) {
         URL url;
         HttpsURLConnection con;
         try {
-            url = new URL(ACCOUNT_BALANCE);
+            url = new URL(ACCOUNT_BALANCE + account);
             con = (HttpsURLConnection) url.openConnection();
             parser = new AccountBalanceParser(con.getInputStream());
             parser.parseDocument();
-            parser.printData();
             balance = parser.getBalance();
         } catch (IOException e) {
             Log.e("debug", e.getMessage());
