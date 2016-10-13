@@ -12,7 +12,7 @@
       android:src="@drawable/ps_64"/>
 
   <TextView
-      android:id="@+id/skillName"
+      android:id="@+id/skillInQueueName"
       style="@style/skillProgressStyle"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
       android:layout_alignParentRight="true">
 
     <TextView
-        android:id="@+id/trainingTime"
+        android:id="@+id/endTime"
         style="@style/skillProgressStyle"
         android:text="22ч 32мин"
         android:textSize="14sp"

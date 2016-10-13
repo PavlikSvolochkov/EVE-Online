@@ -2,43 +2,43 @@ package logic;
 
 public class AccountBalance {
 
-  private String accountID;
-  private String accountKey;
-  private String balance;
+    private String accountID;
+    private String accountKey;
+    private String balance;
 
-  public AccountBalance() {
-  }
+    public AccountBalance() {
+    }
 
-  public String getAccountID() {
-    return accountID;
-  }
+    public String getAccountID() {
+        return accountID;
+    }
 
-  public void setAccountID(String accountID) {
-    this.accountID = accountID;
-  }
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
 
-  public String getAccountKey() {
-    return accountKey;
-  }
+    public String getAccountKey() {
+        return accountKey;
+    }
 
-  public void setAccountKey(String accountKey) {
-    this.accountKey = accountKey;
-  }
+    public void setAccountKey(String accountKey) {
+        this.accountKey = accountKey;
+    }
 
-  public String getBalance() {
-    return balance;
-  }
+    public String getBalance() {
+        return balance;
+    }
 
-  public void setBalance(String balance) {
-    this.balance = balance;
-  }
+    public void setBalance(String balance) {
+        this.balance = balance;
+    }
 
-  @Override
-  public String toString() {
-    return "AccountBalance{" +
-            "accountID='" + accountID + '\'' +
-            ", accountKey='" + accountKey + '\'' +
-            ", balance='" + balance + '\'' +
-            '}';
-  }
+    @Override
+    public String toString() {
+        return "AccountBalance{" +
+                "accountID='" + accountID + '\'' +
+                ", accountKey='" + accountKey + '\'' +
+                ", balance='" + balance + '\'' +
+                '}';
+    }
 }

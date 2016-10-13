@@ -2,33 +2,33 @@ package logic;
 
 public class Implant {
 
-  private String typeId;
-  private String typeName;
+    private String typeId;
+    private String typeName;
 
-  public Implant() {
-  }
+    public Implant() {
+    }
 
-  public String getTypeId() {
-    return typeId;
-  }
+    public String getTypeId() {
+        return typeId;
+    }
 
-  public void setTypeId(String typeId) {
-    this.typeId = typeId;
-  }
+    public void setTypeId(String typeId) {
+        this.typeId = typeId;
+    }
 
-  public String getTypeName() {
-    return typeName;
-  }
+    public String getTypeName() {
+        return typeName;
+    }
 
-  public void setTypeName(String typeName) {
-    this.typeName = typeName;
-  }
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
 
-  @Override
-  public String toString() {
-    return "Implant{" +
-            "typeId='" + typeId + '\'' +
-            ", typeName='" + typeName + '\'' +
-            '}';
-  }
+    @Override
+    public String toString() {
+        return "Implant{" +
+                "typeId='" + typeId + '\'' +
+                ", typeName='" + typeName + '\'' +
+                '}';
+    }
 }

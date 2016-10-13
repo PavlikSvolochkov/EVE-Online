@@ -17,62 +17,62 @@ import logic.AccountBalance;
 
 public class AccountBalanceParser extends DefaultHandler {
 
-  private String tempValue;
-  private AccountBalance balance;
-  private InputStream inputStream;
+    private String tempValue;
+    private AccountBalance balance;
+    private InputStream inputStream;
 
-  public AccountBalanceParser(InputStream in) {
-    this.inputStream = in;
-  }
-
-  public void parseDocument() {
-    SAXParserFactory factory = SAXParserFactory.newInstance();
-    try {
-      Log.d("debug", getClass().getName() + "::Creating AccountBalanceParser...");
-      SAXParser parser = factory.newSAXParser();
-      Log.d("debug", getClass().getName() + "::Parse document...");
-      parser.parse(inputStream, this);
-      printData();
-    } catch (ParserConfigurationException | SAXException | IOException e) {
-      Log.d("debug", e.getMessage());
+    public AccountBalanceParser(InputStream in) {
+        this.inputStream = in;
     }
-  }
 
-  @Override
-  public void startDocument() throws SAXException {
-    Log.d("debug", getClass().getName() + "::START DOCUMENT PARSING (ACCOUNT BALANCE)");
-  }
-
-  @Override
-  public void endDocument() throws SAXException {
-    Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING (ACCOUNT BALANCE)");
-  }
-
-  @Override
-  public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-    if (qName.equalsIgnoreCase("row")) {
-      balance = new AccountBalance();
-      balance.setAccountID(attributes.getValue("accountID"));
-      balance.setAccountKey(attributes.getValue("accountKey"));
-      balance.setBalance(attributes.getValue("balance"));
+    public void parseDocument() {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        try {
+            Log.d("debug", getClass().getName() + "::Creating AccountBalanceParser...");
+            SAXParser parser = factory.newSAXParser();
+            Log.d("debug", getClass().getName() + "::Parse document...");
+            parser.parse(inputStream, this);
+            printData();
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            Log.d("debug", e.getMessage());
+        }
     }
-  }
 
-  @Override
-  public void endElement(String uri, String localName, String qName) throws SAXException {
+    @Override
+    public void startDocument() throws SAXException {
+        Log.d("debug", getClass().getName() + "::START DOCUMENT PARSING (ACCOUNT BALANCE)");
+    }
 
-  }
+    @Override
+    public void endDocument() throws SAXException {
+        Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING (ACCOUNT BALANCE)");
+    }
 
-  @Override
-  public void characters(char[] ch, int start, int length) throws SAXException {
-    tempValue = new String(ch, start, length);
-  }
+    @Override
+    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        if (qName.equalsIgnoreCase("row")) {
+            balance = new AccountBalance();
+            balance.setAccountID(attributes.getValue("accountID"));
+            balance.setAccountKey(attributes.getValue("accountKey"));
+            balance.setBalance(attributes.getValue("balance"));
+        }
+    }
 
-  public AccountBalance getBalance() {
-    return balance;
-  }
+    @Override
+    public void endElement(String uri, String localName, String qName) throws SAXException {
 
-  public void printData() {
-    Log.d("debug", getClass().getName() + "::Balance: " + balance.toString());
-  }
+    }
+
+    @Override
+    public void characters(char[] ch, int start, int length) throws SAXException {
+        tempValue = new String(ch, start, length);
+    }
+
+    public AccountBalance getBalance() {
+        return balance;
+    }
+
+    public void printData() {
+        Log.d("debug", getClass().getName() + "::Balance: " + balance.toString());
+    }
 }

@@ -1,14 +1,12 @@
 package logic;
 
-public class TypeName {
-
-    // <row typeID="645" typeName="Dominix" />
+public class JumpCloneImplant {
 
     private String typeID;
+    private String jumpCloneID;
     private String typeName;
 
-    public TypeName() {
-
+    public JumpCloneImplant() {
     }
 
     public String getTypeID() {
@@ -17,6 +15,14 @@ public class TypeName {
 
     public void setTypeID(String typeID) {
         this.typeID = typeID;
+    }
+
+    public String getJumpCloneID() {
+        return jumpCloneID;
+    }
+
+    public void setJumpCloneID(String jumpCloneID) {
+        this.jumpCloneID = jumpCloneID;
     }
 
     public String getTypeName() {
@@ -29,8 +35,9 @@ public class TypeName {
 
     @Override
     public String toString() {
-        return "TypeName{" +
+        return "JumpCloneImplant{" +
                 "typeID='" + typeID + '\'' +
+                ", jumpCloneID='" + jumpCloneID + '\'' +
                 ", typeName='" + typeName + '\'' +
                 '}';
     }

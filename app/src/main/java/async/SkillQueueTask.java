@@ -5,43 +5,52 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import logic.ServerStatus;
+import logic.SkillQueueItem;
 import parsers.SkillQueueParser;
 
-public class SkillQueueTask extends AsyncTask<Void, Void, ServerStatus> {
+public class SkillQueueTask extends AsyncTask<Void, Void, List<SkillQueueItem>> {
 
-  private static final String API_KEY = "?keyID=4744217";
-  private static final String vCODE = "&vCODE=7VHnHgo7X02AmGVUK8QSKHJ9xb0KD3zaVQ15zNGARZGiMgguWL3825TAkgAWWuK9";
-  public static final String CHAR_ID = "&characterID=95767126";
+    private static String KEY_ID = "5040468";
+    private static String vCODE = "Dw46k2jB9N5MHe15BcTdpBumTKFpBauFWP2eoWk3hRoPUn4zLKPmJuaMmbIfEoro";
+    private static String CHAR_ID = "95767126";
 
-  private String SKILL_QUEUE = "https://api.eveonline.com/char/SkillQueue.xml.aspx";
+    private static final String SKILL_QUEUE = "https://api.eveonline.com/char/SkillQueue.xml.aspx?"
+            + "keyID=" + KEY_ID
+            + "&vCODE=" + vCODE
+            + "&characterID=" + CHAR_ID;
 
-  @Override
-  protected void onPreExecute() {
-    super.onPreExecute();
-  }
+    private List<SkillQueueItem> items;
 
-  @Override
-  protected ServerStatus doInBackground(Void... params) {
-    URL url;
-    HttpsURLConnection con;
-    try {
-      url = new URL(SKILL_QUEUE + API_KEY + vCODE + CHAR_ID);
-      con = (HttpsURLConnection) url.openConnection();
-      SkillQueueParser parser = new SkillQueueParser(con.getInputStream());
-      parser.parseDocument();
-      parser.printQueue();
-    } catch (IOException e) {
-      Log.e("debug", e.getMessage());
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        items = new ArrayList<>();
     }
-    return null;
-  }
 
-  @Override
-  protected void onPostExecute(ServerStatus serverStatus) {
-    super.onPostExecute(serverStatus);
-  }
+    @Override
+    protected List<SkillQueueItem> doInBackground(Void... params) {
+        URL url;
+        HttpsURLConnection con;
+        try {
+            url = new URL(SKILL_QUEUE);
+            con = (HttpsURLConnection) url.openConnection();
+            SkillQueueParser parser = new SkillQueueParser(con.getInputStream());
+            parser.parseDocument();
+            parser.printQueue();
+            items = parser.getItems();
+        } catch (IOException e) {
+            Log.e("debug", e.getMessage());
+        }
+        return items;
+    }
+
+    @Override
+    protected void onPostExecute(List serverStatus) {
+        super.onPostExecute(serverStatus);
+    }
 }

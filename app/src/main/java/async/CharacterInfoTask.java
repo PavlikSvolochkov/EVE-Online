@@ -13,43 +13,46 @@ import parsers.CharacterInfoParser;
 
 public class CharacterInfoTask extends AsyncTask<String, Void, CharacterInfo> {
 
-  private static final String API_KEY = "?keyID=4744217";
-  private static final String vCODE = "&vCODE=7VHnHgo7X02AmGVUK8QSKHJ9xb0KD3zaVQ15zNGARZGiMgguWL3825TAkgAWWuK9";
+    private static String KEY_ID = "5040468";
+    private static String vCODE = "Dw46k2jB9N5MHe15BcTdpBumTKFpBauFWP2eoWk3hRoPUn4zLKPmJuaMmbIfEoro";
+    private static String CHAR_ID = "95767126";
 
-  private String CHARACTER_INFO = "https://api.eveonline.com/eve/CharacterInfo.xml.aspx";
-  private String CHAR_ID = "&characterID=";
+    private String CHARACTER_INFO = "https://api.eveonline.com/eve/CharacterInfo.xml.aspx"
+            + "?keyID=" + KEY_ID
+            + "&vCODE=" + vCODE
+            + "&characterID=";
 
-  private CharacterInfo character;
-  private CharacterInfoParser parser;
+    private CharacterInfo character;
+    private CharacterInfoParser parser;
 
-  public CharacterInfoTask(String charId) {
-    this.CHAR_ID += charId;
-    this.character = new CharacterInfo();
-  }
-
-  @Override
-  protected void onPreExecute() {
-  }
-
-  @Override
-  protected CharacterInfo doInBackground(String... params) {
-    URL url;
-    HttpsURLConnection con;
-    try {
-      url = new URL(CHARACTER_INFO + API_KEY + vCODE + CHAR_ID);
-      con = (HttpsURLConnection) url.openConnection();
-      parser = new CharacterInfoParser(con.getInputStream());
-      parser.parseDocument();
-      parser.printData();
-      character = parser.getCharacter();
-    } catch (IOException e) {
-      Log.e("debug", e.getMessage());
+    public CharacterInfoTask(String charId) {
+        this.CHAR_ID = charId;
+        this.character = new CharacterInfo();
     }
-    return character;
-  }
 
-  @Override
-  protected void onPostExecute(CharacterInfo aVoid) {
+    @Override
+    protected void onPreExecute() {
+    }
 
-  }
+    @Override
+    protected CharacterInfo doInBackground(String... params) {
+        URL url;
+        HttpsURLConnection con;
+        try {
+            url = new URL(CHARACTER_INFO + CHAR_ID);
+            con = (HttpsURLConnection) url.openConnection();
+            parser = new CharacterInfoParser(con.getInputStream());
+            parser.parseDocument();
+            parser.printData();
+            character = parser.getCharacter();
+        } catch (IOException e) {
+            Log.e("debug", e.getMessage());
+        }
+        return character;
+    }
+
+    @Override
+    protected void onPostExecute(CharacterInfo aVoid) {
+
+    }
 }

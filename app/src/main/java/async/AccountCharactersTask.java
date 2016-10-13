@@ -14,42 +14,45 @@ import parsers.AccountCharactersParser;
 
 public class AccountCharactersTask extends AsyncTask<Void, List, List> {
 
-  private static final String CHARACTERS = "https://api.eveonline.com/account/characters.xml.aspx" +
-          "?keyID=4744217" +
-          "&vCODE=7VHnHgo7X02AmGVUK8QSKHJ9xb0KD3zaVQ15zNGARZGiMgguWL3825TAkgAWWuK9";
+    private static String KEY_ID = "5040468";
+    private static String vCODE = "Dw46k2jB9N5MHe15BcTdpBumTKFpBauFWP2eoWk3hRoPUn4zLKPmJuaMmbIfEoro";
 
-  private AccountCharactersParser parser;
+    private static final String CHARACTERS = "https://api.eveonline.com/account/characters.xml.aspx" +
+            "?keyID=" + KEY_ID +
+            "&vCODE=" + vCODE;
 
-  public AccountCharactersTask() {
+    private AccountCharactersParser parser;
 
-  }
+    public AccountCharactersTask() {
 
-  @Override
-  protected void onPreExecute() {
-    super.onPreExecute();
-  }
-
-  @Override
-  protected List<AccountCharacter> doInBackground(Void... params) {
-
-    URL url;
-    HttpsURLConnection con;
-    try {
-      url = new URL(CHARACTERS);
-      Log.d("debug", getClass().getName() + "::Opening connection...");
-      con = (HttpsURLConnection) url.openConnection();
-      Log.d("debug", getClass().getName() + "::Connection opened.");
-      parser = new AccountCharactersParser(con.getInputStream());
-      parser.parseDocument();
-      parser.printData();
-    } catch (IOException e) {
-      Log.e("debug", e.getMessage());
     }
-    return parser.getCharList();
-  }
 
-  @Override
-  protected void onPostExecute(List aVoid) {
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+    }
 
-  }
+    @Override
+    protected List<AccountCharacter> doInBackground(Void... params) {
+
+        URL url;
+        HttpsURLConnection con;
+        try {
+            url = new URL(CHARACTERS);
+            Log.d("debug", getClass().getName() + "::Opening connection...");
+            con = (HttpsURLConnection) url.openConnection();
+            Log.d("debug", getClass().getName() + "::Connection opened.");
+            parser = new AccountCharactersParser(con.getInputStream());
+            parser.parseDocument();
+            parser.printData();
+        } catch (IOException e) {
+            Log.e("debug", e.getMessage());
+        }
+        return parser.getCharList();
+    }
+
+    @Override
+    protected void onPostExecute(List aVoid) {
+
+    }
 }

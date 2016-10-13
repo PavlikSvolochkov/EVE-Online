@@ -16,24 +16,33 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import logic.Character;
+import logic.JumpClone;
+import logic.JumpCloneImplant;
 
 public class CharacterSheetParser extends DefaultHandler {
+
+  private boolean jumpClones;
+  private boolean jumpCloneImp;
 
   private String tempValue;
 
   private Character character;
-  private List<Character> charList;
+  private List<JumpClone> jumpCloneList;
+  private List<JumpCloneImplant> cloneImplantList;
 
   private InputStream inputStream;
 
   public CharacterSheetParser() {
-    this.charList = new ArrayList<>();
-  }
+    }
 
   public CharacterSheetParser(InputStream stream) {
-    this.charList = new ArrayList<>();
     this.inputStream = stream;
-  }
+    this.jumpCloneList = new ArrayList<>();
+    this.cloneImplantList = new ArrayList<>();
+
+    this.jumpClones = false;
+    this.jumpCloneImp = false;
+    }
 
   public void parseDocument() {
     SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -50,25 +59,53 @@ public class CharacterSheetParser extends DefaultHandler {
   @Override
   public void startDocument() throws SAXException {
     Log.d("debug", getClass().getName() + "::START DOCUMENT PARSING...");
-  }
+    }
 
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
     if (qName.equalsIgnoreCase("result")) {
       character = new Character();
     }
-  }
+
+    if (qName.equalsIgnoreCase("rowset") && ("jumpCloneList".equalsIgnoreCase(attributes.getValue("name")))) {
+      jumpClones = true;
+    }
+
+    if (qName.equalsIgnoreCase("row") && (jumpClones == true)) {
+
+      JumpClone jumpClone = new JumpClone();
+
+      jumpClone.setCloneName(attributes.getValue("cloneName"));
+      jumpClone.setLocationId(attributes.getValue("locationID"));
+      jumpClone.setTypeId(attributes.getValue("typeID"));
+      jumpClone.setJumpCloneId(attributes.getValue("jumpCloneID"));
+
+      jumpCloneList.add(jumpClone);
+    }
+
+    if (qName.equalsIgnoreCase("rowset") && ("jumpCloneImplants".equalsIgnoreCase(attributes.getValue("name")))) {
+      jumpCloneImp = true;
+    }
+
+    if (qName.equalsIgnoreCase("row") && (jumpCloneImp == true)) {
+      JumpCloneImplant implant = new JumpCloneImplant();
+
+      implant.setTypeID(attributes.getValue("typeID"));
+      implant.setJumpCloneID(attributes.getValue("jumpCloneID"));
+      implant.setTypeName(attributes.getValue("typeName"));
+
+      cloneImplantList.add(implant);
+    }
+    }
 
   @Override
   public void characters(char[] ch, int start, int length) throws SAXException {
     tempValue = new String(ch, start, length);
-  }
+    }
 
   @Override
   public void endElement(String uri, String localName, String qName) throws SAXException {
-    if (qName.equalsIgnoreCase("result")) {
-      charList.add(character);
-    }
+
     if (qName.equalsIgnoreCase("characterID")) {
       character.setCharacterId(tempValue);
     }
@@ -100,7 +137,7 @@ public class CharacterSheetParser extends DefaultHandler {
       character.setGender(tempValue);
     }
     if (qName.equalsIgnoreCase("corporationName")) {
-      character.setCorporation(tempValue);
+      character.setCorporationName(tempValue);
     }
     if (qName.equalsIgnoreCase("corporationID")) {
       character.setCorporationID(tempValue);
@@ -146,9 +183,10 @@ public class CharacterSheetParser extends DefaultHandler {
     }
 
     /**TODO
-     * jumpClones
+     * jumpCloneList
      * jumpCloneImplants
      */
+
 
     if (qName.equalsIgnoreCase("jumpActivation")) {
       character.setJumpActivation(tempValue);
@@ -174,28 +212,18 @@ public class CharacterSheetParser extends DefaultHandler {
      * corporationRolesAtOther
      * corporationTitles
      */
-  }
+    }
 
   @Override
   public void endDocument() throws SAXException {
     Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING.");
   }
 
-  public void printData() {
-    for (Character character : charList) {
-      Log.d("debug", getClass().getName() + "::Character: " + character.toString());
-    }
-  }
-
   public Character getCharacter() {
     return character;
   }
 
-  public List<Character> getCharList() {
-    return charList;
-  }
-
-  public void  setInputStream(InputStream stream) {
+  public void setInputStream(InputStream stream) {
     this.inputStream = stream;
   }
 }
