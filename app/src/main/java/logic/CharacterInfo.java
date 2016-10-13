@@ -207,28 +207,29 @@ public class CharacterInfo {
 
     @Override
     public String toString() {
-        return "CharacterInfo{" +
-                "characterID='" + characterID + '\'' +
-                ", characterName='" + characterName + '\'' +
-                ", race='" + race + '\'' +
-                ", bloodlineID='" + bloodlineID + '\'' +
-                ", bloodline='" + bloodline + '\'' +
-                ", ancestryID='" + ancestryID + '\'' +
-                ", ancestry='" + ancestry + '\'' +
-                ", accountBalance='" + accountBalance + '\'' +
-                ", skillPoints='" + skillPoints + '\'' +
-                ", nextTrainingEnds='" + nextTrainingEnds + '\'' +
-                ", shipName='" + shipName + '\'' +
-                ", shipTypeID='" + shipTypeID + '\'' +
-                ", shipTypeName='" + shipTypeName + '\'' +
-                ", corporationID='" + corporationID + '\'' +
-                ", corporation='" + corporation + '\'' +
-                ", corporationDate='" + corporationDate + '\'' +
-                ", allianceID='" + allianceID + '\'' +
-                ", alliance='" + alliance + '\'' +
-                ", allianceDate='" + allianceDate + '\'' +
-                ", lastKnownLocation='" + lastKnownLocation + '\'' +
-                ", securityStatus='" + securityStatus + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("CharacterInfo{");
+        sb.append("characterID='").append(characterID).append('\'');
+        sb.append(", characterName='").append(characterName).append('\'');
+        sb.append(", race='").append(race).append('\'');
+        sb.append(", bloodlineID='").append(bloodlineID).append('\'');
+        sb.append(", bloodline='").append(bloodline).append('\'');
+        sb.append(", ancestryID='").append(ancestryID).append('\'');
+        sb.append(", ancestry='").append(ancestry).append('\'');
+        sb.append(", accountBalance='").append(accountBalance).append('\'');
+        sb.append(", skillPoints='").append(skillPoints).append('\'');
+        sb.append(", nextTrainingEnds='").append(nextTrainingEnds).append('\'');
+        sb.append(", shipName='").append(shipName).append('\'');
+        sb.append(", shipTypeID='").append(shipTypeID).append('\'');
+        sb.append(", shipTypeName='").append(shipTypeName).append('\'');
+        sb.append(", corporationID='").append(corporationID).append('\'');
+        sb.append(", corporation='").append(corporation).append('\'');
+        sb.append(", corporationDate='").append(corporationDate).append('\'');
+        sb.append(", allianceID='").append(allianceID).append('\'');
+        sb.append(", alliance='").append(alliance).append('\'');
+        sb.append(", allianceDate='").append(allianceDate).append('\'');
+        sb.append(", lastKnownLocation='").append(lastKnownLocation).append('\'');
+        sb.append(", securityStatus='").append(securityStatus).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

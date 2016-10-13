@@ -44,11 +44,12 @@ public class JumpClone {
 
     @Override
     public String toString() {
-        return "JumpClone{" +
-                "cloneName='" + cloneName + '\'' +
-                ", locationId='" + locationId + '\'' +
-                ", typeId='" + typeId + '\'' +
-                ", jumpCloneId='" + jumpCloneId + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("JumpClone{");
+        sb.append("cloneName='").append(cloneName).append('\'');
+        sb.append(", locationId='").append(locationId).append('\'');
+        sb.append(", typeId='").append(typeId).append('\'');
+        sb.append(", jumpCloneId='").append(jumpCloneId).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

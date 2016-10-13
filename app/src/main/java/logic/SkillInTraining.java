@@ -81,15 +81,16 @@ public class SkillInTraining {
 
     @Override
     public String toString() {
-        return "SkillInTraining{" +
-                "currentTQTime='" + currentTQTime + '\'' +
-                ", trainingEndTime='" + trainingEndTime + '\'' +
-                ", trainingStartTime='" + trainingStartTime + '\'' +
-                ", trainingTypeID='" + trainingTypeID + '\'' +
-                ", trainingStartSP='" + trainingStartSP + '\'' +
-                ", trainingDestinationSP='" + trainingDestinationSP + '\'' +
-                ", trainingToLevel='" + trainingToLevel + '\'' +
-                ", skillInTraining='" + skillInTraining + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("SkillInTraining{");
+        sb.append("currentTQTime='").append(currentTQTime).append('\'');
+        sb.append(", trainingEndTime='").append(trainingEndTime).append('\'');
+        sb.append(", trainingStartTime='").append(trainingStartTime).append('\'');
+        sb.append(", trainingTypeID='").append(trainingTypeID).append('\'');
+        sb.append(", trainingStartSP='").append(trainingStartSP).append('\'');
+        sb.append(", trainingDestinationSP='").append(trainingDestinationSP).append('\'');
+        sb.append(", trainingToLevel='").append(trainingToLevel).append('\'');
+        sb.append(", skillInTraining='").append(skillInTraining).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

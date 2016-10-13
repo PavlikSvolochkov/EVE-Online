@@ -6,18 +6,27 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6942d1d6-44c8-46a4-85fe-32fbb37c754d" name="Default" comment="Refactor AsyncTasks and activities">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/logic/ApiKeyInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/parsers/ApiKeyInfoParser.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/Account.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/CharacterIDParser.java" afterPath="" />
+    <list default="true" id="6942d1d6-44c8-46a4-85fe-32fbb37c754d" name="Default" comment="Refactor AsyncTasks and logic classes, create ApiKeyInfo and ApiKeyInfoParser">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/AssetList.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/async/AccountBalanceTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/async/AccountBalanceTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/async/AccountStatusTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/async/AccountStatusTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/APIKey.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/APIKey.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/AccountStatus.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/AccountStatus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/AccountStatusParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/parsers/AccountStatusParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CharacterID.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/CharacterLite.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/AccountBalance.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/AccountBalance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/AccountCharacter.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/AccountCharacter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/ApiKeyInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/ApiKeyInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/Attribute.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/Attribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/Character.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/Character.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CharacterInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/CharacterInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRole.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRole.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtBase.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtHQ.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtHQ.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtOther.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtOther.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CorporationTitle.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/CorporationTitle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/Implant.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/Implant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/JumpClone.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/JumpClone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/JumpCloneImplant.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/JumpCloneImplant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/Skill.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/Skill.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/SkillInTraining.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/SkillInTraining.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/SkillQueueItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/SkillQueueItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/logic/TypeName.java" afterPath="$PROJECT_DIR$/app/src/main/java/logic/TypeName.java" />
     </list>
     <ignored path="EVE-Online.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,61 +59,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AccountStatusParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/parsers/AccountStatusParser.java">
+      <file leaf-file-name="JumpClone.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/JumpClone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-201">
-              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="493">
+              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="APIKey.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JumpCloneImplant.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/JumpCloneImplant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerStatus.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/ServerStatus.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Skill.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/Skill.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SkillInTraining.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/SkillInTraining.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="530">
+              <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SkillQueueItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/SkillQueueItem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="547">
+              <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TypeName.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/TypeName.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Certificate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/Certificate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountStatus.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/AccountStatus.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="700">
+              <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="APIKey.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/APIKey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-              <folding>
-                <element signature="e#358#359#0" expanded="true" />
-                <element signature="e#388#389#0" expanded="true" />
-                <element signature="e#439#440#0" expanded="true" />
-                <element signature="e#471#472#0" expanded="true" />
-                <element signature="e#510#511#0" expanded="true" />
-                <element signature="e#538#539#0" expanded="true" />
-                <element signature="e#587#588#0" expanded="true" />
-                <element signature="e#623#624#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#700#701#0" expanded="true" />
-                <element signature="e#759#760#0" expanded="true" />
-                <element signature="e#805#806#0" expanded="true" />
-                <element signature="e#843#844#0" expanded="true" />
-                <element signature="e#870#871#0" expanded="true" />
-                <element signature="e#917#918#0" expanded="true" />
-                <element signature="e#951#952#0" expanded="true" />
-                <element signature="e#992#993#0" expanded="true" />
-                <element signature="e#1022#1023#0" expanded="true" />
-                <element signature="e#1075#1076#0" expanded="true" />
-                <element signature="e#1115#1116#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApiKeyInfo.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/ApiKeyInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#804#805#0" expanded="true" />
-                <element signature="e#833#834#0" expanded="true" />
-                <element signature="e#877#878#0" expanded="true" />
-                <element signature="e#913#914#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="391">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1702,10 +1752,27 @@
         <option value="$PROJECT_DIR$/app/src/main/java/logic/CharacterID.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/parsers/CharacterIDParser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/logic/CharacterLite.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/logic/ApiKeyInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/parsers/ApiKeyInfoParser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/logic/AccountStatus.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/AccountBalance.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/AccountCharacter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/logic/APIKey.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/ApiKeyInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/Attribute.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/Character.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/CharacterInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/CorporationRole.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtBase.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtHQ.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtOther.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/CorporationTitle.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/Implant.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/JumpClone.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/JumpCloneImplant.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/Skill.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/SkillInTraining.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/SkillQueueItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/logic/TypeName.java" />
       </list>
     </option>
   </component>
@@ -2247,7 +2314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476381195786</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactor AsyncTasks and logic classes, create ApiKeyInfo and ApiKeyInfoParser">
+      <created>1476384944216</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1476384944216</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2302,7 +2376,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reformat code style" />
     <MESSAGE value="Refactor AsyncTasks and activities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor AsyncTasks and activities" />
+    <MESSAGE value="Refactor AsyncTasks and logic classes, create ApiKeyInfo and ApiKeyInfoParser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor AsyncTasks and logic classes, create ApiKeyInfo and ApiKeyInfoParser" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -2311,92 +2386,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/line.9.png">
-      <provider selected="true" editor-type-id="ninepatcheditor">
-        <state />
-      </provider>
-      <provider editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/RestTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/TESTS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/adapters/AccountCharactersAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/parsers/AccountCharactersParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/SkillQueueTEST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/AccountCharactersTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/parsers/SkillQueueParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/skill_queue_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2562,14 +2551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/async/AccountStatusTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -2615,53 +2596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/CharacterLite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
-          <folding>
-            <element signature="e#344#345#0" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#612#613#0" expanded="true" />
-            <element signature="e#662#663#0" expanded="true" />
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#888#889#0" expanded="true" />
-            <element signature="e#926#927#0" expanded="true" />
-            <element signature="e#1079#1080#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1164#1165#0" expanded="true" />
-            <element signature="e#1208#1209#0" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
-            <element signature="e#1282#1283#0" expanded="true" />
-            <element signature="e#1338#1339#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1422#1423#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1504#1505#0" expanded="true" />
-            <element signature="e#1546#1547#0" expanded="true" />
-            <element signature="e#1584#1585#0" expanded="true" />
-            <element signature="e#1618#1619#0" expanded="true" />
-            <element signature="e#1672#1673#0" expanded="true" />
-            <element signature="e#1718#1719#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/AccountStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/parsers/AccountStatusParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-201">
@@ -2688,39 +2622,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/APIKey.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/AccountBalance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding>
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#700#701#0" expanded="true" />
-            <element signature="e#759#760#0" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#843#844#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#992#993#0" expanded="true" />
-            <element signature="e#1022#1023#0" expanded="true" />
-            <element signature="e#1075#1076#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="408">
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/AccountCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="81" column="18" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/ApiKeyInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        <state relative-caret-position="629">
+          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#804#805#0" expanded="true" />
@@ -2728,6 +2649,182 @@
             <element signature="e#877#878#0" expanded="true" />
             <element signature="e#913#914#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/AssetList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/Attribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="297" column="18" selection-start-line="297" selection-start-column="18" selection-end-line="297" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/CharacterInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="208" column="18" selection-start-line="208" selection-start-column="18" selection-end-line="208" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/CharacterLite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/CharInfoViewHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/CorporationRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtHQ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtOther.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/CorporationTitle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/Implant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/JumpClone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/JumpCloneImplant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/ServerStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/Skill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/SkillInTraining.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/SkillQueueItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/TypeName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/Certificate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/AccountStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/logic/APIKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

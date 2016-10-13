@@ -29,9 +29,10 @@ public class TypeName {
 
     @Override
     public String toString() {
-        return "TypeName{" +
-                "typeID='" + typeID + '\'' +
-                ", typeName='" + typeName + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("TypeName{");
+        sb.append("typeID='").append(typeID).append('\'');
+        sb.append(", typeName='").append(typeName).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

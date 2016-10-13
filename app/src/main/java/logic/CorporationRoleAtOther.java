@@ -26,9 +26,10 @@ public class CorporationRoleAtOther {
 
     @Override
     public String toString() {
-        return "CorporationRoleAtOther{" +
-                "roleName='" + roleName + '\'' +
-                ", roleId='" + roleId + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("CorporationRoleAtOther{");
+        sb.append("roleName='").append(roleName).append('\'');
+        sb.append(", roleId='").append(roleId).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

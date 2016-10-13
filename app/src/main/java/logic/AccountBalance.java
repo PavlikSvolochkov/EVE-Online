@@ -35,10 +35,11 @@ public class AccountBalance {
 
     @Override
     public String toString() {
-        return "AccountBalance{" +
-                "accountID='" + accountID + '\'' +
-                ", accountKey='" + accountKey + '\'' +
-                ", balance='" + balance + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("AccountBalance{");
+        sb.append("accountID='").append(accountID).append('\'');
+        sb.append(", accountKey='").append(accountKey).append('\'');
+        sb.append(", balance='").append(balance).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

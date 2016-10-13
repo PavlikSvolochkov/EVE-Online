@@ -80,15 +80,16 @@ public class AccountCharacter {
 
     @Override
     public String toString() {
-        return "AccountCharacter{" +
-                "name='" + name + '\'' +
-                ", characterID='" + characterID + '\'' +
-                ", corporationName='" + corporationName + '\'' +
-                ", corporationID='" + corporationID + '\'' +
-                ", allianceID='" + allianceID + '\'' +
-                ", allianceName='" + allianceName + '\'' +
-                ", factionID='" + factionID + '\'' +
-                ", factionName='" + factionName + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("AccountCharacter{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", characterID='").append(characterID).append('\'');
+        sb.append(", corporationName='").append(corporationName).append('\'');
+        sb.append(", corporationID='").append(corporationID).append('\'');
+        sb.append(", allianceID='").append(allianceID).append('\'');
+        sb.append(", allianceName='").append(allianceName).append('\'');
+        sb.append(", factionID='").append(factionID).append('\'');
+        sb.append(", factionName='").append(factionName).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

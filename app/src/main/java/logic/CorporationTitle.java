@@ -26,9 +26,10 @@ public class CorporationTitle {
 
     @Override
     public String toString() {
-        return "CorporationTitle{" +
-                "titleName='" + titleName + '\'' +
-                ", titleId='" + titleId + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("CorporationTitle{");
+        sb.append("titleName='").append(titleName).append('\'');
+        sb.append(", titleId='").append(titleId).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

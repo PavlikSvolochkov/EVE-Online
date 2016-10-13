@@ -26,9 +26,10 @@ public class Attribute {
 
     @Override
     public String toString() {
-        return "Attribute{" +
-                "name='" + name + '\'' +
-                ", value='" + value + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("Attribute{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", value='").append(value).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

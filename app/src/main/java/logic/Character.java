@@ -296,46 +296,49 @@ public class Character {
 
     @Override
     public String toString() {
-        return "Character{" +
-                "characterId='" + characterId + '\'' +
-                ", name='" + name + '\'' +
-                ", homeStationId='" + homeStationId + '\'' +
-                ", DoB='" + DoB + '\'' +
-                ", race='" + race + '\'' +
-                ", bloodlineId='" + bloodlineId + '\'' +
-                ", bloodline='" + bloodline + '\'' +
-                ", ancestryID='" + ancestryID + '\'' +
-                ", ancestry='" + ancestry + '\'' +
-                ", gender='" + gender + '\'' +
-                ", corporationID='" + corporationID + '\'' +
-                ", corporationName='" + corporationName + '\'' +
-                ", allianceName='" + allianceName + '\'' +
-                ", allianceId='" + allianceId + '\'' +
-                ", factionName='" + factionName + '\'' +
-                ", factionId='" + factionId + '\'' +
-                ", cloneTypeId='" + cloneTypeId + '\'' +
-                ", cloneName='" + cloneName + '\'' +
-                ", cloneSkillPoints='" + cloneSkillPoints + '\'' +
-                ", freeSkillPoints='" + freeSkillPoints + '\'' +
-                ", freeRespecs='" + freeRespecs + '\'' +
-                ", cloneJumpDate='" + cloneJumpDate + '\'' +
-                ", lastRespecDate='" + lastRespecDate + '\'' +
-                ", lastTimeRespec='" + lastTimeRespec + '\'' +
-                ", remoteStationDate='" + remoteStationDate + '\'' +
-                ", jumpActivation='" + jumpActivation + '\'' +
-                ", jumpFatigue='" + jumpFatigue + '\'' +
-                ", jumpLastUpdate='" + jumpLastUpdate + '\'' +
-                ", balance='" + balance + '\'' +
-                ", cachedUntil='" + cachedUntil + '\'' +
-                ", jumpClones=" + jumpClones +
-                ", implants=" + implants +
-                ", attributes=" + attributes +
-                ", skills=" + skills +
-                ", corporationRoles=" + corporationRoles +
-                ", corporationRolesAtHQ=" + corporationRolesAtHQ +
-                ", corporationRolesAtBase=" + corporationRolesAtBase +
-                ", corporationRolesAtOther=" + corporationRolesAtOther +
-                ", corporationTitles=" + corporationTitles +
-                '}';
+        final StringBuilder sb = new StringBuilder("Character{");
+        sb.append("characterId='").append(characterId).append('\'');
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", homeStationId='").append(homeStationId).append('\'');
+        sb.append(", DoB='").append(DoB).append('\'');
+        sb.append(", race='").append(race).append('\'');
+        sb.append(", bloodlineId='").append(bloodlineId).append('\'');
+        sb.append(", bloodline='").append(bloodline).append('\'');
+        sb.append(", ancestryID='").append(ancestryID).append('\'');
+        sb.append(", ancestry='").append(ancestry).append('\'');
+        sb.append(", gender='").append(gender).append('\'');
+        sb.append(", corporationID='").append(corporationID).append('\'');
+        sb.append(", corporationName='").append(corporationName).append('\'');
+        sb.append(", allianceName='").append(allianceName).append('\'');
+        sb.append(", allianceId='").append(allianceId).append('\'');
+        sb.append(", factionName='").append(factionName).append('\'');
+        sb.append(", factionId='").append(factionId).append('\'');
+        sb.append(", cloneTypeId='").append(cloneTypeId).append('\'');
+        sb.append(", cloneName='").append(cloneName).append('\'');
+        sb.append(", cloneSkillPoints='").append(cloneSkillPoints).append('\'');
+        sb.append(", freeSkillPoints='").append(freeSkillPoints).append('\'');
+        sb.append(", freeRespecs='").append(freeRespecs).append('\'');
+        sb.append(", cloneJumpDate='").append(cloneJumpDate).append('\'');
+        sb.append(", lastRespecDate='").append(lastRespecDate).append('\'');
+        sb.append(", lastTimeRespec='").append(lastTimeRespec).append('\'');
+        sb.append(", remoteStationDate='").append(remoteStationDate).append('\'');
+        sb.append(", cachedUntil='").append(cachedUntil).append('\'');
+        sb.append(", jumpClones=").append(jumpClones);
+        sb.append(", jumpCloneImplants=").append(jumpCloneImplants);
+        sb.append(", jumpActivation='").append(jumpActivation).append('\'');
+        sb.append(", jumpFatigue='").append(jumpFatigue).append('\'');
+        sb.append(", jumpLastUpdate='").append(jumpLastUpdate).append('\'');
+        sb.append(", balance='").append(balance).append('\'');
+        sb.append(", implants=").append(implants);
+        sb.append(", attributes=").append(attributes);
+        sb.append(", skills=").append(skills);
+        sb.append(", certificates=").append(certificates);
+        sb.append(", corporationRoles=").append(corporationRoles);
+        sb.append(", corporationRolesAtHQ=").append(corporationRolesAtHQ);
+        sb.append(", corporationRolesAtBase=").append(corporationRolesAtBase);
+        sb.append(", corporationRolesAtOther=").append(corporationRolesAtOther);
+        sb.append(", corporationTitles=").append(corporationTitles);
+        sb.append('}');
+        return sb.toString();
     }
 }
