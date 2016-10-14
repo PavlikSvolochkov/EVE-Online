@@ -60,21 +60,11 @@ public class ServerStatusParser extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-
-        if (qName.equalsIgnoreCase("currentTime")) {
-            status.setCurrentTime(tempValue);
-        }
-
         if (qName.equalsIgnoreCase("serverOpen")) {
             status.setStatus(tempValue);
         }
-
         if (qName.equalsIgnoreCase("onlinePlayers")) {
             status.setPlayers(Integer.parseInt(tempValue));
-        }
-
-        if (qName.equalsIgnoreCase("cachedUntil")) {
-            status.setCachedUntil(tempValue);
         }
     }
 

@@ -1,6 +1,5 @@
 package ru.tsk.eveonline;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -21,6 +20,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import adapters.AccountCharactersAdapter;
+import async.AccountCharactersTask;
 import async.CharacterIconTask;
 import async.CharacterInfoTask;
 import async.CharacterSheetTask;
@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
     private List<CharacterInfo> charList;
     private List<Bitmap> charIcons;
 
-    private TextView statusTV;
-    private TextView playersTV;
-    private ListView listView;
+    private TextView status;
+    private TextView players;
     private Button openSkillBtn;
+    private ListView listView;
 
     private AccountCharactersAdapter adapter;
 
@@ -64,15 +64,15 @@ public class MainActivity extends AppCompatActivity {
         charIcons = new ArrayList<>();
         accCharList = new ArrayList<>();
 
-        statusTV = (TextView) findViewById(R.id.serverStatus);
-        playersTV = (TextView) findViewById(R.id.onlinePlayers);
+        status = (TextView) findViewById(R.id.serverStatus);
+        players = (TextView) findViewById(R.id.onlinePlayers);
 
         openSkillBtn = (Button) findViewById(R.id.openSkillsBtn);
         openSkillBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SkillQueueActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(MainActivity.this, SkillQueueActivity.class);
+//                startActivity(intent);
             }
         });
 
@@ -81,22 +81,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(MainActivity.this, CharActivity.class);
-
-                intent.putExtra("ID", charList.get(position).getCharacterID());
-                intent.putExtra("CHAR_NAME", charList.get(position).getCharacterName());
-                intent.putExtra("BALANCE", charList.get(position).getAccountBalance());
-                intent.putExtra("SKILL_POINTS", charList.get(position).getSkillPoints());
-
-                MainActivity.this.startActivity(intent);
             }
         });
 
         try {
 
-            serverStatus = new ServerStatusTask(statusTV, playersTV).execute().get();
+            new ServerStatusTask(status, players).execute().get();
 
-//      accCharList = new AccountCharactersTask().execute().get();
+            accCharList = new AccountCharactersTask().execute().get();
             charList = new CharacterSheetTask(accCharList).execute().get();
 
             for (AccountCharacter character : accCharList) {

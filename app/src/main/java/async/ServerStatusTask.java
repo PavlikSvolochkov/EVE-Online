@@ -37,7 +37,6 @@ public class ServerStatusTask extends AsyncTask<Void, Void, ServerStatus> {
             con = (HttpsURLConnection) url.openConnection();
             ServerStatusParser parser = new ServerStatusParser(con.getInputStream());
             parser.parseDocument();
-            parser.printStatus();
             serverStatus = parser.getStatus();
         } catch (IOException e) {
             Log.e("debug", e.getMessage());
