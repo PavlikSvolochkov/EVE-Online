@@ -8,12 +8,13 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import ru.tsk.eveonline.logic.Links;
 import ru.tsk.eveonline.logic.TypeName;
 import ru.tsk.eveonline.parsers.TypeNameParser;
 
 public class TypeNameTask extends AsyncTask<Void, String, String> {
 
-    private final String TYPE_NAME = "https://api.eveonline.com/eve/TypeName.xml.aspx?ids=";
+    private final String TYPE_NAME = Links.TYPE_NAME + "?ids=";
     private String types;
     private TypeName typeName;
 
@@ -36,7 +37,7 @@ public class TypeNameTask extends AsyncTask<Void, String, String> {
             parser.parseDocument();
             typeName = parser.getTypeName();
         } catch (IOException e) {
-            Log.e("debug", e.getMessage());
+            Log.d("TypeNameTask", e.getMessage());
         }
         return typeName.getTypeName();
     }

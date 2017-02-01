@@ -10,12 +10,12 @@ import javax.net.ssl.HttpsURLConnection;
 
 import ru.tsk.eveonline.logic.APIKey;
 import ru.tsk.eveonline.logic.AccountBalance;
+import ru.tsk.eveonline.logic.Links;
 import ru.tsk.eveonline.parsers.AccountBalanceParser;
 
 public class AccountBalanceTask extends AsyncTask<String, AccountBalance, AccountBalance> {
 
-    private final String ACCOUNT_BALANCE = "https://api.eveonline.com/char/AccountBalance.xml.aspx"
-            + APIKey.API_KEY + APIKey.vCODE
+    private final String ACCOUNT_BALANCE = Links.ACCOUNT_BALANCE + APIKey.API_KEY + APIKey.vCODE
             + "&characterID=";
 
     private AccountBalance balance;

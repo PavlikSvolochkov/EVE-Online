@@ -10,17 +10,15 @@ import javax.net.ssl.HttpsURLConnection;
 
 import ru.tsk.eveonline.logic.APIKey;
 import ru.tsk.eveonline.logic.AccountCharacter;
-import ru.tsk.eveonline.parsers.AccountCharactersParser;
+import ru.tsk.eveonline.logic.Links;
 import ru.tsk.eveonline.parsers.CharacterSheetParser;
 
 public class CharacterSheetTask extends AsyncTask<Void, List, List> {
 
-    private static final String CHARACTER_LIST = "https://api.eveonline.com/account/characters.xml.aspx" + APIKey.API_KEY + APIKey.vCODE;
-    private static final String CHARACTER = "https://api.eveonline.com/char/CharacterSheet.xml.aspx" + APIKey.API_KEY + APIKey.vCODE;
+    private static final String CHARACTER_SHEET = Links.CHARACTER_SHEET + APIKey.API_KEY + APIKey.vCODE;
 
     private List<AccountCharacter> accCharList;
 
-    private AccountCharactersParser accCharParser;
     private CharacterSheetParser charSheetParser;
 
     public CharacterSheetTask(List<AccountCharacter> accCharList) {
@@ -39,15 +37,14 @@ public class CharacterSheetTask extends AsyncTask<Void, List, List> {
 
         try {
             for (AccountCharacter accChar : accCharList) {
-                URL charURL = new URL(CHARACTER + "&characterID=" + accChar.getCharacterID());
+                URL charURL = new URL(CHARACTER_SHEET + "&characterID=" + accChar.getCharacterID());
                 HttpsURLConnection charConn = (HttpsURLConnection) charURL.openConnection();
                 charSheetParser.setInputStream(charConn.getInputStream());
                 charSheetParser.parseDocument();
             }
         } catch (Exception e) {
-            Log.e("debug", e.getMessage());
+            Log.d("CharacterSheetTask", e.getMessage());
         }
-
         return accCharList;
     }
 

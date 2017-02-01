@@ -11,6 +11,7 @@ import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
 
 import ru.tsk.eveonline.logic.APIKey;
+import ru.tsk.eveonline.logic.Links;
 import ru.tsk.eveonline.logic.SkillQueueItem;
 import ru.tsk.eveonline.parsers.SkillQueueParser;
 
@@ -18,9 +19,7 @@ public class SkillQueueTask extends AsyncTask<Void, Void, List<SkillQueueItem>> 
 
     private static String CHAR_ID = "95767126";
 
-    private static final String SKILL_QUEUE = "https://api.eveonline.com/char/SkillQueue.xml.aspx"
-            + APIKey.API_KEY
-            + APIKey.vCODE
+    private static final String SKILL_QUEUE = Links.SKILL_QUEUE + APIKey.API_KEY + APIKey.vCODE
             + "&characterID=" + CHAR_ID;
 
     private List<SkillQueueItem> queueItemList;
@@ -42,7 +41,7 @@ public class SkillQueueTask extends AsyncTask<Void, Void, List<SkillQueueItem>> 
             parser.parseDocument();
             queueItemList = parser.getQueueItemList();
         } catch (IOException e) {
-            Log.e("debug", e.getMessage());
+            Log.d("SkillQueueTask", e.getMessage());
         }
         return queueItemList;
     }

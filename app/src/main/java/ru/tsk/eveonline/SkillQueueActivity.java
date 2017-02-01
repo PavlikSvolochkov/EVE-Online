@@ -33,7 +33,7 @@ public class SkillQueueActivity extends AppCompatActivity {
             List<SkillQueueItem> queue = new SkillQueueTask().execute().get();
 
             for (SkillQueueItem item : queue) {
-                Log.d("debug", item.getTypeID());
+                Log.d("SkillQueueActivity", item.getTypeID());
             }
 
             SkillQueueAdapter adapter = new SkillQueueAdapter(this, queue);

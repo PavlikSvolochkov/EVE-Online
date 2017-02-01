@@ -8,13 +8,14 @@ import javax.net.ssl.HttpsURLConnection;
 
 import ru.tsk.eveonline.logic.APIKey;
 import ru.tsk.eveonline.logic.AccountCharacter;
+import ru.tsk.eveonline.logic.Links;
 import ru.tsk.eveonline.parsers.AccountCharactersParser;
 import ru.tsk.eveonline.parsers.CharacterSheetParser;
 
 public class AccountCharactersTest {
 
-    private static final String CHARACTER_LIST = "https://api.eveonline.com/account/characters.xml.aspx" + APIKey.API_KEY + APIKey.vCODE;
-    private static final String CHARACTER = "https://api.eveonline.com/char/CharacterSheet.xml.aspx" + APIKey.API_KEY + APIKey.vCODE;
+    private static final String CHARACTER_LIST = Links.CHARACTERS + APIKey.API_KEY + APIKey.vCODE;
+    private static final String CHARACTER = Links.CHARACTER_SHEET + APIKey.API_KEY + APIKey.vCODE;
 
     public static void main(String[] args) throws IOException {
         URL url = new URL(CHARACTER_LIST);

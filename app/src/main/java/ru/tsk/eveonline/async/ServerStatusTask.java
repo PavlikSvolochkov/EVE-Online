@@ -10,12 +10,11 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import ru.tsk.eveonline.logic.Links;
 import ru.tsk.eveonline.logic.ServerStatus;
 import ru.tsk.eveonline.parsers.ServerStatusParser;
 
 public class ServerStatusTask extends AsyncTask<Void, Void, ServerStatus> {
-
-    private final String SERVER_STATUS = "https://api.eveonline.com/server/ServerStatus.xml.aspx";
 
     private ServerStatus serverStatus;
 
@@ -33,13 +32,13 @@ public class ServerStatusTask extends AsyncTask<Void, Void, ServerStatus> {
         URL url;
         HttpsURLConnection con;
         try {
-            url = new URL(SERVER_STATUS);
+            url = new URL(Links.SERVER_STATUS);
             con = (HttpsURLConnection) url.openConnection();
             ServerStatusParser parser = new ServerStatusParser(con.getInputStream());
             parser.parseDocument();
             serverStatus = parser.getStatus();
         } catch (IOException e) {
-            Log.e("debug", e.getMessage());
+            Log.d("ServerStatusTask", e.getMessage());
         }
         return serverStatus;
     }

@@ -5,18 +5,18 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import ru.tsk.eveonline.logic.APIKey;
+import ru.tsk.eveonline.logic.AccountCharacter;
+import ru.tsk.eveonline.logic.Links;
 import ru.tsk.eveonline.parsers.AccountCharactersParser;
 import ru.tsk.eveonline.parsers.CharacterInfoParser;
 
 public class TESTS {
 
-    private static String KEY_ID = "5040468";
-    private static String vCODE = "Dw46k2jB9N5MHe15BcTdpBumTKFpBauFWP2eoWk3hRoPUn4zLKPmJuaMmbIfEoro";
-
-    private static final String CHAR_INFO = "https://api.eveonline.com/eve/CharacterInfo.xml.aspx?characterID=95764101&userID=4744217&API_KEY=1073741823";
-    private static final String CHARACTERS = "https://api.eveonline.com/account/characters.xml.aspx" +
-            "?keyID=" + KEY_ID +
-            "&vCODE=" + vCODE;
+    public static final String CHAR_ID = "95764101";
+    private static final String CHAR_INFO = Links.CHARACTER_INFO
+            + "?characterID=" + CHAR_ID + "&userID=4744217&API_KEY=1073741823";
+    private static final String CHARACTERS = Links.CHARACTERS + APIKey.API_KEY + APIKey.vCODE;
 
     public static void main(String[] args) {
 
@@ -31,11 +31,15 @@ public class TESTS {
             con = (HttpsURLConnection) url.openConnection();
             characterInfoParser = new CharacterInfoParser(con.getInputStream());
             characterInfoParser.parseDocument();
+            System.out.println("TESTS" + characterInfoParser.getCharacter().toString());
 
             url = new URL(CHARACTERS);
             con = (HttpsURLConnection) url.openConnection();
             accountCharactersParser = new AccountCharactersParser(con.getInputStream());
             accountCharactersParser.parseDocument();
+            for (AccountCharacter accountCharacter : accountCharactersParser.getCharList()) {
+                System.out.println("TESTS" + accountCharacter.toString());
+            }
 
         } catch (IOException e) {
             e.printStackTrace();

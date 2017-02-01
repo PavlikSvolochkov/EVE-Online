@@ -10,13 +10,13 @@ import javax.net.ssl.HttpsURLConnection;
 
 import ru.tsk.eveonline.logic.APIKey;
 import ru.tsk.eveonline.logic.AccountStatus;
+import ru.tsk.eveonline.logic.Links;
 import ru.tsk.eveonline.parsers.AccountStatusParser;
 
 
 public class AccountStatusTask extends AsyncTask<Void, Void, AccountStatus> {
 
-    private final String ACCOUNT_STATUS = "https://api.eveonline.com/account/AccountStatus.xml.aspx"
-            + APIKey.API_KEY + APIKey.vCODE;
+    private final String ACCOUNT_STATUS = Links.ACCOUNT_STATUS + APIKey.API_KEY + APIKey.vCODE;
 
     private AccountStatus status;
     private AccountStatusParser statusParser;

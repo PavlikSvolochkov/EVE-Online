@@ -10,14 +10,14 @@ import javax.net.ssl.HttpsURLConnection;
 
 import ru.tsk.eveonline.logic.APIKey;
 import ru.tsk.eveonline.logic.CharacterInfo;
+import ru.tsk.eveonline.logic.Links;
 import ru.tsk.eveonline.parsers.CharacterInfoParser;
 
 public class CharacterInfoTask extends AsyncTask<String, Void, CharacterInfo> {
 
-    private static String CHAR_ID = "95767126";
+    private String CHAR_ID = "95767126";
 
-    private String CHARACTER_INFO = "https://api.eveonline.com/eve/CharacterInfo.xml.aspx"
-            + APIKey.API_KEY + APIKey.vCODE
+    private String CHARACTER_INFO = Links.CHARACTER_INFO + APIKey.API_KEY + APIKey.vCODE
             + "&characterID=";
 
     private CharacterInfo character;
@@ -39,7 +39,7 @@ public class CharacterInfoTask extends AsyncTask<String, Void, CharacterInfo> {
             parser.parseDocument();
             character = parser.getCharacter();
         } catch (IOException e) {
-            Log.e("debug", e.getMessage());
+            Log.d("CharacterInfoTask", e.getMessage());
         }
         return character;
     }
