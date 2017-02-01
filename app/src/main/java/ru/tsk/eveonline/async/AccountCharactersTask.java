@@ -35,7 +35,6 @@ public class AccountCharactersTask extends AsyncTask<Void, List, List> {
             Log.d("debug", getClass().getName() + "::Connection opened.");
             parser = new AccountCharactersParser(con.getInputStream());
             parser.parseDocument();
-            parser.printData();
         } catch (IOException e) {
             Log.e("debug", e.getMessage());
         }

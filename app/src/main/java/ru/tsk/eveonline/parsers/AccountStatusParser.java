@@ -27,20 +27,17 @@ public class AccountStatusParser extends DefaultHandler {
     }
 
     public void parseDocument() {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        try {
-            Log.d("debug", getClass().getName() + "::Creating AccountStatusParser...");
-            SAXParser parser = factory.newSAXParser();
-            Log.d("debug", getClass().getName() + "::Parse document...");
-            parser.parse(inputStream, this);
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            Log.d("debug", e.getMessage());
-        }
-    }
 
-    @Override
-    public void startDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::START PARSING ACCOUNT STATUS");
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+
+        try {
+
+            SAXParser parser = factory.newSAXParser();
+            parser.parse(inputStream, this);
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            Log.d("AccountStatusParser", e.getMessage());
+        }
     }
 
     @Override
@@ -69,11 +66,6 @@ public class AccountStatusParser extends DefaultHandler {
         if (qName.equalsIgnoreCase("logonMinutes")) {
             accountStatus.setLogonMinutes(tempValue);
         }
-    }
-
-    @Override
-    public void endDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::END PARSE ACCOUNT STATUS");
     }
 
     public AccountStatus getAccountStatus() {

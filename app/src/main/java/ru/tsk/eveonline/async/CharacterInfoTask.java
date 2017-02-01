@@ -37,7 +37,6 @@ public class CharacterInfoTask extends AsyncTask<String, Void, CharacterInfo> {
             con = (HttpsURLConnection) url.openConnection();
             parser = new CharacterInfoParser(con.getInputStream());
             parser.parseDocument();
-            parser.printData();
             character = parser.getCharacter();
         } catch (IOException e) {
             Log.e("debug", e.getMessage());

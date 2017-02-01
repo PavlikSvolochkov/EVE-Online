@@ -31,13 +31,11 @@ public class TESTS {
             con = (HttpsURLConnection) url.openConnection();
             characterInfoParser = new CharacterInfoParser(con.getInputStream());
             characterInfoParser.parseDocument();
-            characterInfoParser.printData();
 
             url = new URL(CHARACTERS);
             con = (HttpsURLConnection) url.openConnection();
             accountCharactersParser = new AccountCharactersParser(con.getInputStream());
             accountCharactersParser.parseDocument();
-            accountCharactersParser.printData();
 
         } catch (IOException e) {
             e.printStackTrace();

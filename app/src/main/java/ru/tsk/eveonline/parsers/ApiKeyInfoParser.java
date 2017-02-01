@@ -34,20 +34,17 @@ public class ApiKeyInfoParser extends DefaultHandler {
     }
 
     public void parseDocument() {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        try {
-            Log.d("debug", getClass().getName() + "::Creating ApiKeyInfoParser...");
-            SAXParser parser = factory.newSAXParser();
-            Log.d("debug", getClass().getName() + "::Parse document...");
-            parser.parse(inputStream, this);
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            Log.d("debug", e.getMessage());
-        }
-    }
 
-    @Override
-    public void startDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::START PARSING ACCOUNT STATUS");
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+
+        try {
+
+            SAXParser parser = factory.newSAXParser();
+            parser.parse(inputStream, this);
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            Log.d("ApiKeyInfoParser", e.getMessage());
+        }
     }
 
     @Override
@@ -84,15 +81,5 @@ public class ApiKeyInfoParser extends DefaultHandler {
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         tempValue = new String(ch, start, length);
-    }
-
-    @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
-        super.endElement(uri, localName, qName);
-    }
-
-    @Override
-    public void endDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::END PARSE ACCOUNT STATUS");
     }
 }

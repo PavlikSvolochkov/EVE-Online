@@ -34,7 +34,6 @@ public class TypeNameTask extends AsyncTask<Void, String, String> {
             con = (HttpsURLConnection) url.openConnection();
             TypeNameParser parser = new TypeNameParser(con.getInputStream());
             parser.parseDocument();
-            parser.printNames();
             typeName = parser.getTypeName();
         } catch (IOException e) {
             Log.e("debug", e.getMessage());

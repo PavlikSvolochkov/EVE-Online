@@ -19,7 +19,6 @@ import ru.tsk.eveonline.logic.TypeName;
 
 public class TypeNameParser extends DefaultHandler {
 
-    private String tempValue;
     private TypeName typeName;
     private List<TypeName> typeNameList;
     private InputStream inputStream;
@@ -29,20 +28,17 @@ public class TypeNameParser extends DefaultHandler {
     }
 
     public void parseDocument() {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        try {
-            Log.d("debug", getClass().getName() + "::Creating parser...");
-            SAXParser parser = factory.newSAXParser();
-            Log.d("debug", getClass().getName() + "::Parse document...");
-            parser.parse(inputStream, this);
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            Log.d("debug", e.getMessage());
-        }
-    }
 
-    @Override
-    public void startDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::START DOCUMENT PARSING...");
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+
+        try {
+
+            SAXParser parser = factory.newSAXParser();
+            parser.parse(inputStream, this);
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            Log.d("TypeNameParser", e.getMessage());
+        }
     }
 
     @Override
@@ -58,20 +54,10 @@ public class TypeNameParser extends DefaultHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
-//    tempValue = new String(ch, start, length);
-    }
-
-    @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         if (qName.equalsIgnoreCase("row")) {
             typeNameList.add(typeName);
         }
-    }
-
-    @Override
-    public void endDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING.");
     }
 
     public List<TypeName> getTypeNameList() {
@@ -82,9 +68,4 @@ public class TypeNameParser extends DefaultHandler {
         return typeName;
     }
 
-    public void printNames() {
-        for (TypeName name : typeNameList) {
-            Log.d("debug", getClass().getName() + "::" + name.toString());
-        }
-    }
 }

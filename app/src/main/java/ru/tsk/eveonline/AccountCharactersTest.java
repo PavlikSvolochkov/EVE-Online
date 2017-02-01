@@ -21,7 +21,6 @@ public class AccountCharactersTest {
         HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
         AccountCharactersParser charactersParser = new AccountCharactersParser(conn.getInputStream());
         charactersParser.parseDocument();
-        charactersParser.printData();
 
         List<AccountCharacter> list = charactersParser.getCharList();
         for (AccountCharacter character : list) {
@@ -29,7 +28,6 @@ public class AccountCharactersTest {
             HttpsURLConnection charConn = (HttpsURLConnection) charURL.openConnection();
             CharacterSheetParser parser = new CharacterSheetParser(charConn.getInputStream());
             parser.parseDocument();
-            charactersParser.printData();
         }
     }
 }

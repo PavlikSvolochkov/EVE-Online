@@ -17,7 +17,6 @@ import ru.tsk.eveonline.logic.AccountBalance;
 
 public class AccountBalanceParser extends DefaultHandler {
 
-    private String tempValue;
     private AccountBalance balance;
     private InputStream inputStream;
 
@@ -26,26 +25,17 @@ public class AccountBalanceParser extends DefaultHandler {
     }
 
     public void parseDocument() {
+
         SAXParserFactory factory = SAXParserFactory.newInstance();
+
         try {
-            Log.d("debug", getClass().getName() + "::Creating AccountBalanceParser...");
+
             SAXParser parser = factory.newSAXParser();
-            Log.d("debug", getClass().getName() + "::Parse document...");
             parser.parse(inputStream, this);
-            printData();
+
         } catch (ParserConfigurationException | SAXException | IOException e) {
-            Log.d("debug", e.getMessage());
+            Log.d("AccountBalanceParser", e.getMessage());
         }
-    }
-
-    @Override
-    public void startDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::START DOCUMENT PARSING (ACCOUNT BALANCE)");
-    }
-
-    @Override
-    public void endDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING (ACCOUNT BALANCE)");
     }
 
     @Override
@@ -58,21 +48,7 @@ public class AccountBalanceParser extends DefaultHandler {
         }
     }
 
-    @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
-
-    }
-
-    @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
-        tempValue = new String(ch, start, length);
-    }
-
     public AccountBalance getBalance() {
         return balance;
-    }
-
-    public void printData() {
-        Log.d("debug", getClass().getName() + "::Balance: " + balance.toString());
     }
 }

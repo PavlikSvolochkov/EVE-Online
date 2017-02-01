@@ -26,29 +26,17 @@ public class ServerStatusParser extends DefaultHandler {
     }
 
     public void parseDocument() {
+
         SAXParserFactory factory = SAXParserFactory.newInstance();
+
         try {
-            Log.d("debug", getClass().getName() + "::Creating ServerStatusParser...");
+
             SAXParser parser = factory.newSAXParser();
-            Log.d("debug", getClass().getName() + "::Parse document...");
             parser.parse(inputStream, this);
+
         } catch (ParserConfigurationException | SAXException | IOException e) {
-            Log.d("debug", e.getMessage());
+            Log.d("ServerStatusParser", e.getMessage());
         }
-    }
-
-    public void printStatus() {
-        Log.d("debug", getClass().getName() + "::Server status: " + status.getStatus() + "\nPlayers online: " + status.getPlayers());
-    }
-
-    @Override
-    public void startDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::START DOCUMENT PARSING (SERVER STATUS)");
-    }
-
-    @Override
-    public void endDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING (SERVER STATUS)");
     }
 
     @Override

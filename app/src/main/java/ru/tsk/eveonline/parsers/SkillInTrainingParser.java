@@ -26,20 +26,17 @@ public class SkillInTrainingParser extends DefaultHandler {
     }
 
     public void parseDocument() {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        try {
-            Log.d("debug", getClass().getName() + "::Creating SkillInTrainingParser...");
-            SAXParser parser = factory.newSAXParser();
-            Log.d("debug", getClass().getName() + "::Parse document...");
-            parser.parse(inputStream, this);
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            Log.d("debug", e.getMessage());
-        }
-    }
 
-    @Override
-    public void startDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::START DOCUMENT PARSING");
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+
+        try {
+
+            SAXParser parser = factory.newSAXParser();
+            parser.parse(inputStream, this);
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            Log.d("SkillInTrainingParser", e.getMessage());
+        }
     }
 
     @Override
@@ -80,11 +77,6 @@ public class SkillInTrainingParser extends DefaultHandler {
         if (qName.equalsIgnoreCase("skillInTraining")) {
             skill.setSkillInTraining(tempValue);
         }
-    }
-
-    @Override
-    public void endDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING");
     }
 
     public SkillInTraining getSkill() {

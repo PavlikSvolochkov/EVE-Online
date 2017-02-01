@@ -19,7 +19,6 @@ import ru.tsk.eveonline.logic.AccountCharacter;
 
 public class AccountCharactersParser extends DefaultHandler {
 
-    private String tmpValue;
     private InputStream inputStream;
     private List<AccountCharacter> characterList;
     private AccountCharacter character;
@@ -30,21 +29,17 @@ public class AccountCharactersParser extends DefaultHandler {
     }
 
     public void parseDocument() {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        try {
-            Log.d("debug", getClass().getName() + "::Creating AccountCharactersParser...");
-            SAXParser parser = factory.newSAXParser();
-            Log.d("debug", getClass().getName() + "::Parse document...");
-            parser.parse(inputStream, this);
-            printData();
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            Log.d("debug", e.getMessage());
-        }
-    }
 
-    @Override
-    public void startDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::START DOCUMENT PARSING (ACCOUNT CHARACTERS)");
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+
+        try {
+
+            SAXParser parser = factory.newSAXParser();
+            parser.parse(inputStream, this);
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            Log.d("AccountCharactersParser", e.getMessage());
+        }
     }
 
     @Override
@@ -65,26 +60,9 @@ public class AccountCharactersParser extends DefaultHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
-        tmpValue = new String(ch, start, length);
-    }
-
-    @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-
         if (qName.equals("row")) {
             characterList.add(character);
-        }
-    }
-
-    @Override
-    public void endDocument() throws SAXException {
-        Log.d("debug", getClass().getName() + "::END DOCUMENT PARSING (ACCOUNT CHARACTERS)");
-    }
-
-    public void printData() {
-        for (AccountCharacter character : characterList) {
-            Log.d("debug", getClass().getName() + "::Character: " + character.toString());
         }
     }
 
