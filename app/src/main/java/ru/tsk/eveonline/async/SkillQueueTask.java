@@ -40,8 +40,7 @@ public class SkillQueueTask extends AsyncTask<Void, Void, List<SkillQueueItem>> 
             con = (HttpsURLConnection) url.openConnection();
             SkillQueueParser parser = new SkillQueueParser(con.getInputStream());
             parser.parseDocument();
-            parser.printQueue();
-            queueItemList = parser.getItems();
+            queueItemList = parser.getQueueItemList();
         } catch (IOException e) {
             Log.e("debug", e.getMessage());
         }

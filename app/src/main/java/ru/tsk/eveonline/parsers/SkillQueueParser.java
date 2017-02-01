@@ -1,5 +1,7 @@
 package ru.tsk.eveonline.parsers;
 
+import android.util.Log;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -17,75 +19,68 @@ import ru.tsk.eveonline.logic.SkillQueueItem;
 
 public class SkillQueueParser extends DefaultHandler {
 
-    private SkillQueueItem item;
-    private List<SkillQueueItem> items;
+    private String tempValue;
+    private String currentTime;
 
     private InputStream inputStream;
 
-    public SkillQueueParser() {
-    }
+    private SkillQueueItem queueItem;
+    private List<SkillQueueItem> queueItemList;
 
     public SkillQueueParser(InputStream inputStream) {
-        this.items = new ArrayList<>();
+        this.queueItemList = new ArrayList<>();
         this.inputStream = inputStream;
     }
 
     public void parseDocument() {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        try {
-//            Log.d("debug", getClass().getName() + "::Creating SkillQueueParser...");
-            SAXParser parser = factory.newSAXParser();
-//            Log.d("debug", getClass().getName() + "::Parse document...");
-            parser.parse(inputStream, this);
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-//            Log.d("debug", e.getMessage());
-        }
-    }
 
-    @Override
-    public void startDocument() throws SAXException {
-//        Log.d("debug", getClass().getName() + "START DOCUMENT PARSING");
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+
+        try {
+
+            SAXParser parser = factory.newSAXParser();
+            parser.parse(inputStream, this);
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            Log.d("SkillQueueParser", e.getMessage());
+        }
     }
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if (qName.equalsIgnoreCase("row")) {
-            item = new SkillQueueItem();
+            queueItem = new SkillQueueItem();
 
-            item.setQueuePosition(attributes.getValue("queuePosition"));
-            item.setTypeID(attributes.getValue("typeID"));
-            item.setLevel(attributes.getValue("level"));
-            item.setStartSP(attributes.getValue("startSP"));
-            item.setEndSP(attributes.getValue("endSP"));
-            item.setStartTime(attributes.getValue("startTime"));
-            item.setEndTime(attributes.getValue("endTime"));
+            queueItem.setQueuePosition(attributes.getValue("queuePosition"));
+            queueItem.setTypeID(attributes.getValue("typeID"));
+            queueItem.setLevel(attributes.getValue("level"));
+            queueItem.setStartSP(attributes.getValue("startSP"));
+            queueItem.setEndSP(attributes.getValue("endSP"));
+            queueItem.setStartTime(attributes.getValue("startTime"));
+            queueItem.setEndTime(attributes.getValue("endTime"));
         }
     }
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
-
+        tempValue = new String(ch, start, length);
     }
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
+        if (qName.equalsIgnoreCase("currentTime")) {
+            currentTime = tempValue;
+        }
         if (qName.equalsIgnoreCase("row")) {
-            items.add(item);
+            queueItemList.add(queueItem);
         }
     }
 
-    @Override
-    public void endDocument() throws SAXException {
-//        Log.d("debug", getClass().getName() + "END DOCUMENT PARSING");
+    public List<SkillQueueItem> getQueueItemList() {
+        return queueItemList;
     }
 
-    public List<SkillQueueItem> getItems() {
-        return items;
-    }
-
-    public void printQueue() {
-        for (SkillQueueItem item : items) {
-//            Log.d("debug", item.toString());
-        }
+    public String getCurrentTime() {
+        return currentTime;
     }
 }

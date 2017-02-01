@@ -6,74 +6,11 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6942d1d6-44c8-46a4-85fe-32fbb37c754d" name="Default" comment="Move packages into ru.tsk.eveonline package.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/design_23_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/design_23_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_23_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="6942d1d6-44c8-46a4-85fe-32fbb37c754d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/CharActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/CharActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/SkillQueueActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/SkillQueueActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/AccountCharactersTest.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/AccountCharactersTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/RestTests.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/RestTests.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/SkillQueueTEST.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/SkillQueueTEST.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/TESTS.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/TESTS.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/adapters/AccountCharactersAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/adapters/AccountCharactersAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/adapters/SkillQueueAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/adapters/SkillQueueAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/async/AccountBalanceTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/AccountBalanceTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/async/AccountCharactersTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/AccountCharactersTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/async/AccountStatusTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/AccountStatusTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/async/CharacterIconTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/CharacterIconTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/async/CharacterInfoTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/CharacterInfoTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/async/CharacterSheetTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/CharacterSheetTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/async/ServerStatusTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/ServerStatusTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/async/SkillInTrainingTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/SkillInTrainingTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/async/SkillQueueTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/SkillQueueTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/async/TypeNameTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/TypeNameTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/db/DBHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/db/DBHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/APIKey.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/APIKey.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/AccountBalance.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/AccountBalance.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/AccountCharacter.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/AccountCharacter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/AccountStatus.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/AccountStatus.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/ApiKeyInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/ApiKeyInfo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/Attribute.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/Attribute.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/Certificate.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/Certificate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CharInfoViewHolder.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/CharInfoViewHolder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/Character.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/Character.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CharacterInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/CharacterInfo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CharacterLite.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/CharacterLite.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRole.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/CorporationRole.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtBase.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/CorporationRoleAtBase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtHQ.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/CorporationRoleAtHQ.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CorporationRoleAtOther.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/CorporationRoleAtOther.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/CorporationTitle.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/CorporationTitle.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/Implant.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/Implant.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/JumpClone.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/JumpClone.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/JumpCloneImplant.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/JumpCloneImplant.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/ServerStatus.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/ServerStatus.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/Skill.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/Skill.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/SkillInTraining.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/SkillInTraining.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/SkillQueueItem.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/SkillQueueItem.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/logic/TypeName.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/TypeName.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/AccountBalanceParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/AccountBalanceParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/AccountCharactersParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/AccountCharactersParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/AccountStatusParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/AccountStatusParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/ApiKeyInfoParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/ApiKeyInfoParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/CharacterInfoParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/CharacterInfoParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/CharacterSheetParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/CharacterSheetParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/ServerStatusParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/ServerStatusParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/SkillInTrainingParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/SkillInTrainingParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/SkillQueueParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/SkillQueueParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/parsers/TypeNameParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/TypeNameParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/SkillQueueTEST.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/SkillQueueTEST.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/SkillQueueTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/SkillQueueTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/SkillQueueParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/SkillQueueParser.java" />
     </list>
     <ignored path="EVE-Online.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,19 +53,37 @@
       <file leaf-file-name="SkillQueueTEST.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/SkillQueueTEST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+            <state relative-caret-position="374">
+              <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SkillQueueParser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SkillQueueTask.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/SkillQueueTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+              <folding>
+                <element signature="e#1484#1485#0" expanded="true" />
+                <element signature="e#1533#1534#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SkillQueueParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/SkillQueueParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="572">
+              <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
+              <folding>
+                <element signature="e#2450#2451#0" expanded="true" />
+                <element signature="e#2486#2487#0" expanded="true" />
+                <element signature="e#2524#2525#0" expanded="true" />
+                <element signature="e#2558#2559#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1676,7 +1631,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/async/ServerStatusTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/parsers/ServerStatusParser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/logic/ServerStatus.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/MainActivity.java" />
@@ -1724,8 +1678,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/AccountStatusTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/CharacterInfoTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/SkillInTrainingTask.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/SkillQueueTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/TypeNameTask.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/SkillQueueTask.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/SkillQueueTEST.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/SkillQueueParser.java" />
       </list>
     </option>
@@ -1834,6 +1789,50 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="eveonline" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EVE-Online" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eveonline" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EVE-Online" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eveonline" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adapters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2352,7 +2351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476385267342</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Move packages into ru.tsk.eveonline package.">
+      <created>1485972626163</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1485972626163</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2373,6 +2379,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24839744" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2390,7 +2397,6 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2419,26 +2425,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/CharacterSheetTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/ServerStatusTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/db/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2464,14 +2450,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/AccountStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/APIKey.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -2616,14 +2594,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/SkillInTraining.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/SkillQueueItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -2814,14 +2784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/SkillQueueTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/TypeNameTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -2830,19 +2792,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/adapters/AccountCharactersAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/adapters/SkillQueueAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/SkillQueueItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/logic/APIKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/SkillQueueTEST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        <state relative-caret-position="374">
+          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/parsers/SkillQueueParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="572">
+          <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
+          <folding>
+            <element signature="e#2450#2451#0" expanded="true" />
+            <element signature="e#2486#2487#0" expanded="true" />
+            <element signature="e#2524#2525#0" expanded="true" />
+            <element signature="e#2558#2559#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/tsk/eveonline/async/SkillQueueTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding>
+            <element signature="e#1484#1485#0" expanded="true" />
+            <element signature="e#1533#1534#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

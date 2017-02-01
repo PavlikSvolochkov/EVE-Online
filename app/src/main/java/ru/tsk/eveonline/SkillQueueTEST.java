@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 
 import ru.tsk.eveonline.logic.APIKey;
+import ru.tsk.eveonline.logic.SkillQueueItem;
 import ru.tsk.eveonline.parsers.SkillQueueParser;
 
 public class SkillQueueTEST {
@@ -23,6 +24,10 @@ public class SkillQueueTEST {
 
         SkillQueueParser parser = new SkillQueueParser(queueUrl.openStream());
         parser.parseDocument();
-        parser.printQueue();
+
+        System.out.println(parser.getCurrentTime());
+        for (SkillQueueItem skillQueueItem : parser.getQueueItemList()) {
+            System.out.println(skillQueueItem.toString());
+        }
     }
 }
