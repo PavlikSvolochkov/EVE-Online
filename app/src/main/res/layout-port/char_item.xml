@@ -1,68 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/charLayout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/border_char_skill_filled_mid"
-    android:padding="8sp">
+    android:padding="8dp">
 
-  <ImageView
-      android:id="@+id/charIcon"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentLeft="true"
-      android:maxHeight="512sp"
-      android:maxWidth="512sp"
-      android:paddingRight="8sp"
-      android:src="@drawable/ps_128"/>
+    <ImageView
+        android:id="@+id/charIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:maxHeight="512sp"
+        android:maxWidth="512sp"
+        android:src="@drawable/ps_128" />
 
-  <TextView
-      android:id="@+id/charName"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_toRightOf="@+id/charIcon"
-      android:text="Character Name"
-      android:textSize="22sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/charIcon"
+        android:orientation="vertical"
+        android:padding="8dp">
 
-  <TextView
-      android:id="@+id/ancestry"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/charName"
-      android:layout_toRightOf="@+id/charIcon"
-      android:text="Race: "/>
+        <TextView
+            android:id="@+id/charName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Character Name"
+            android:textSize="22sp" />
 
-  <TextView
-      android:id="@+id/corpName"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/ancestry"
-      android:layout_toRightOf="@+id/charIcon"
-      android:text="Corporation: "/>
+        <TextView
+            android:id="@+id/ancestry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Race: " />
 
-  <TextView
-      android:id="@+id/skillTraining"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/accBalance"
-      android:layout_toRightOf="@+id/charIcon"
-      android:text="Skill training: "/>
+        <TextView
+            android:id="@+id/corpName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Corporation: " />
 
-  <TextView
-      android:id="@+id/securityStatus"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/corpName"
-      android:layout_toRightOf="@+id/charIcon"
-      android:text="Security Status: "/>
+        <TextView
+            android:id="@+id/skillTraining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skill training: " />
 
-  <TextView
-      android:id="@+id/accBalance"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/securityStatus"
-      android:layout_toRightOf="@+id/charIcon"
-      android:text="Balance: "/>
+        <TextView
+            android:id="@+id/securityStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Security Status: " />
+
+        <TextView
+            android:id="@+id/accBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Balance: " />
+
+    </LinearLayout>
 
 </RelativeLayout>

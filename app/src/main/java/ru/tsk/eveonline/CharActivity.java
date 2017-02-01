@@ -32,7 +32,7 @@ public class CharActivity extends AppCompatActivity {
         setContentView(R.layout.cpp_like_char_item);
 
         skillTrainTV = (TextView) findViewById(R.id.skillName);
-        skillEndTimeTV = (TextView) findViewById(R.id.timeLeft);
+        skillEndTimeTV = (TextView) findViewById(R.id.endTime);
         skillPoints = (TextView) findViewById(R.id.skillPoints);
         balanceTV = (TextView) findViewById(R.id.charBalance);
 
