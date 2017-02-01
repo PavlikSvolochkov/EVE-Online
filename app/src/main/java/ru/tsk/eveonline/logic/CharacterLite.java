@@ -77,16 +77,15 @@ public class CharacterLite {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("CharacterLite{");
-        sb.append("characterID='").append(characterID).append('\'');
-        sb.append(", characterName='").append(characterName).append('\'');
-        sb.append(", corporationID='").append(corporationID).append('\'');
-        sb.append(", corporationName='").append(corporationName).append('\'');
-        sb.append(", allianceID='").append(allianceID).append('\'');
-        sb.append(", allianceName='").append(allianceName).append('\'');
-        sb.append(", factionID='").append(factionID).append('\'');
-        sb.append(", factionName='").append(factionName).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "CharacterLite{" +
+                "characterID='" + characterID + '\'' +
+                ", characterName='" + characterName + '\'' +
+                ", corporationID='" + corporationID + '\'' +
+                ", corporationName='" + corporationName + '\'' +
+                ", allianceID='" + allianceID + '\'' +
+                ", allianceName='" + allianceName + '\'' +
+                ", factionID='" + factionID + '\'' +
+                ", factionName='" + factionName + '\'' +
+                '}';
     }
 }

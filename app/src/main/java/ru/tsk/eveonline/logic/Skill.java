@@ -44,12 +44,11 @@ public class Skill {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Skill{");
-        sb.append("typeId='").append(typeId).append('\'');
-        sb.append(", published='").append(published).append('\'');
-        sb.append(", level='").append(level).append('\'');
-        sb.append(", skillPoints='").append(skillPoints).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "Skill{" +
+                "typeId='" + typeId + '\'' +
+                ", published='" + published + '\'' +
+                ", level='" + level + '\'' +
+                ", skillPoints='" + skillPoints + '\'' +
+                '}';
     }
 }

@@ -54,12 +54,11 @@ public class AccountStatus {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("AccountStatus{");
-        sb.append("paidUntil='").append(paidUntil).append('\'');
-        sb.append(", createDate='").append(createDate).append('\'');
-        sb.append(", logonCount='").append(logonCount).append('\'');
-        sb.append(", logonMinutes='").append(logonMinutes).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "AccountStatus{" +
+                "paidUntil='" + paidUntil + '\'' +
+                ", createDate='" + createDate + '\'' +
+                ", logonCount='" + logonCount + '\'' +
+                ", logonMinutes='" + logonMinutes + '\'' +
+                '}';
     }
 }

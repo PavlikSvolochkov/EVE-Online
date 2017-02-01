@@ -74,15 +74,14 @@ public class SkillQueueItem {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("SkillQueueItem{");
-        sb.append("queuePosition='").append(queuePosition).append('\'');
-        sb.append(", typeID='").append(typeID).append('\'');
-        sb.append(", level='").append(level).append('\'');
-        sb.append(", startSP='").append(startSP).append('\'');
-        sb.append(", endSP='").append(endSP).append('\'');
-        sb.append(", startTime='").append(startTime).append('\'');
-        sb.append(", endTime='").append(endTime).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "SkillQueueItem{" +
+                "queuePosition='" + queuePosition + '\'' +
+                ", typeID='" + typeID + '\'' +
+                ", level='" + level + '\'' +
+                ", startSP='" + startSP + '\'' +
+                ", endSP='" + endSP + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                '}';
     }
 }

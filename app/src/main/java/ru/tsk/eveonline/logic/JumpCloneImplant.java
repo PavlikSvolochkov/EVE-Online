@@ -35,11 +35,10 @@ public class JumpCloneImplant {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("JumpCloneImplant{");
-        sb.append("typeID='").append(typeID).append('\'');
-        sb.append(", jumpCloneID='").append(jumpCloneID).append('\'');
-        sb.append(", typeName='").append(typeName).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "JumpCloneImplant{" +
+                "typeID='" + typeID + '\'' +
+                ", jumpCloneID='" + jumpCloneID + '\'' +
+                ", typeName='" + typeName + '\'' +
+                '}';
     }
 }

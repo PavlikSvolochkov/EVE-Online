@@ -40,10 +40,9 @@ public class ApiKeyInfo {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("ApiKeyInfo{");
-        sb.append("apiKey=").append(apiKey);
-        sb.append(", charList=").append(charList);
-        sb.append('}');
-        return sb.toString();
+        return "ApiKeyInfo{" +
+                "apiKey=" + apiKey +
+                ", charList=" + charList +
+                '}';
     }
 }

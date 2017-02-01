@@ -26,10 +26,9 @@ public class Implant {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Implant{");
-        sb.append("typeId='").append(typeId).append('\'');
-        sb.append(", typeName='").append(typeName).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "Implant{" +
+                "typeId='" + typeId + '\'' +
+                ", typeName='" + typeName + '\'' +
+                '}';
     }
 }
