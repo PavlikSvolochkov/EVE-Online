@@ -8,9 +8,9 @@ import android.widget.ListView;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-import adapters.SkillQueueAdapter;
-import async.SkillQueueTask;
-import logic.SkillQueueItem;
+import ru.tsk.eveonline.adapters.SkillQueueAdapter;
+import ru.tsk.eveonline.async.SkillQueueTask;
+import ru.tsk.eveonline.logic.SkillQueueItem;
 
 public class SkillQueueActivity extends AppCompatActivity {
 

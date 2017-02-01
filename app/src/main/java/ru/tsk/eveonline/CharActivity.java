@@ -9,9 +9,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.concurrent.ExecutionException;
 
-import async.SkillInTrainingTask;
-import async.TypeNameTask;
-import logic.SkillInTraining;
+import ru.tsk.eveonline.async.SkillInTrainingTask;
+import ru.tsk.eveonline.async.TypeNameTask;
+import ru.tsk.eveonline.logic.SkillInTraining;
 
 public class CharActivity extends AppCompatActivity {
 

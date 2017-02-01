@@ -3,111 +3,48 @@
 
     <item
         is-multidex="false"
-        jar="E:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jar="C:\Users\Paul\.android\build-cache\a60fdfb5c51a44f6343c58f21be81d4719adf478\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_0e81fb66c720dd957bbe6858eb69505aab13ac36.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\dev\android\EVE-Online\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="cd89b4d106a3e9c26635599e1cf3d70c3c5584a7">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_a4226e6a9a72cb03dbbfea23514341cc8c853d6b\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_aa7735c582bb60c06ed65d7f3f50937e9354f135.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\dev\libs\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_089c8dda12f78b7f3101480d85a3217467016fd2.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.1_aa7735c582bb60c06ed65d7f3f50937e9354f135\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\dev\android\EVE-Online\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9f0aef9c0b0f58f3e4804a61da78de8b3b7060be">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7d2a62303320f93242d843874cc08e3ad32fb44f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\dev\libs\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.0.1_089c8dda12f78b7f3101480d85a3217467016fd2\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.0.1_4416e363078abbd31fb9135dfe14d7776b7ef9aa.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
+        revision="25.0.0"
         sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.0.1_6c92bc44653e85975aeeef412a3da26f1e0f6fb4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.0.1_0e81fb66c720dd957bbe6858eb69505aab13ac36\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.0.1_4416e363078abbd31fb9135dfe14d7776b7ef9aa\classes.dex" />
+        <dex dex="D:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\classes_d745835568edf6d876d86a439054ad6f8057d6c3.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="E:\dev\android\EVE-Online\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jar="C:\Users\Paul\.android\build-cache\888a1b18cf38a70a79cc35f4c56df91d170a2201\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="E:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.1_6c92bc44653e85975aeeef412a3da26f1e0f6fb4.jar" />
+        revision="25.0.0"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="D:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\classes_91c8e196c9e572b8776dc471fd6ee45cc9468526.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\dev\libs\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="D:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_af04709aa976c2990c1f4856ea87e3c8d17cff2c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paul\.android\build-cache\abc512969a20a01c127b8eb94c541ada5dd95eb0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="D:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\classes_61f74aea570170c30741854dc745faac2858c1bb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Paul\.android\build-cache\a60fdfb5c51a44f6343c58f21be81d4719adf478\output\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="D:\dev\android\EVE-Online\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_e8311a723cb8649999eb97792f17c267f59d9e22.jar" />
     </item>
 
 </items>

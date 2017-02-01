@@ -19,15 +19,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-import adapters.AccountCharactersAdapter;
-import async.AccountCharactersTask;
-import async.CharacterIconTask;
-import async.CharacterInfoTask;
-import async.CharacterSheetTask;
-import async.ServerStatusTask;
-import logic.AccountCharacter;
-import logic.CharacterInfo;
-import logic.ServerStatus;
+import ru.tsk.eveonline.adapters.AccountCharactersAdapter;
+import ru.tsk.eveonline.async.AccountCharactersTask;
+import ru.tsk.eveonline.async.CharacterIconTask;
+import ru.tsk.eveonline.async.CharacterInfoTask;
+import ru.tsk.eveonline.async.CharacterSheetTask;
+import ru.tsk.eveonline.async.ServerStatusTask;
+import ru.tsk.eveonline.logic.AccountCharacter;
+import ru.tsk.eveonline.logic.CharacterInfo;
+import ru.tsk.eveonline.logic.ServerStatus;
 
 public class MainActivity extends AppCompatActivity {
 
