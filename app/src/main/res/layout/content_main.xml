@@ -1,78 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:padding="6sp"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                tools:context=".MainActivity"
-                tools:showIn="@layout/activity_main">
-
-  <RelativeLayout
-      android:id="@+id/serverStatusBox"
-      android:padding="8sp"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="6sp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
 
     <RelativeLayout
-        android:id="@+id/statusBox"
-        android:layout_width="wrap_content"
+        android:id="@+id/serverStatusBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:padding="8sp">
 
-      <TextView
-          android:id="@+id/serverStatusLabel"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="@string/serverStatusLabel"/>
+        <RelativeLayout
+            android:id="@+id/statusBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
 
-      <TextView
-          android:id="@+id/serverStatus"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="4sp"
-          android:layout_toRightOf="@+id/serverStatusLabel"
-          android:text="@string/stringContent"/>
+            <TextView
+                android:id="@+id/serverStatusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/serverStatusLabel" />
 
-      <TextView
-          android:id="@+id/onlinePlayersLabel"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_below="@id/serverStatus"
-          android:text="@string/onlinePlayersLabel"/>
+            <TextView
+                android:id="@+id/serverStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:layout_toEndOf="@+id/serverStatusLabel"
+                android:text="@string/stringContent" />
 
-      <TextView
-          android:id="@+id/onlinePlayers"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_below="@id/serverStatus"
-          android:layout_marginLeft="4sp"
-          android:layout_toRightOf="@+id/onlinePlayersLabel"
-          android:text="@string/stringContent"/>
+            <TextView
+                android:id="@+id/onlinePlayersLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/serverStatus"
+                android:text="@string/onlinePlayersLabel" />
+
+            <TextView
+                android:id="@+id/onlinePlayers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/serverStatus"
+                android:layout_marginStart="4sp"
+                android:layout_toEndOf="@+id/onlinePlayersLabel"
+                android:text="@string/stringContent" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/openSkillsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="Opens skills queue" />
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/openSkillsBtn"
-        android:layout_width="wrap_content"
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/charListView"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:text="Opens skills queue"/>
-
-  </RelativeLayout>
-
-
-
-  <ListView
-      android:id="@+id/charListView"
-      xmlns:android="http://schemas.android.com/apk/res/android"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:layout_alignParentLeft="true"
-      android:layout_alignParentStart="true"
-      android:layout_below="@+id/serverStatusBox"
-      android:layout_marginTop="1sp"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/serverStatusBox"
+        android:layout_marginTop="1sp" />
 
 </RelativeLayout>

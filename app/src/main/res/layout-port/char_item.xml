@@ -10,15 +10,13 @@
         android:id="@+id/charIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:maxHeight="512sp"
-        android:maxWidth="512sp"
+        android:layout_alignParentStart="true"
         android:src="@drawable/ps_128" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/charIcon"
+        android:layout_toEndOf="@+id/charIcon"
         android:orientation="vertical"
         android:padding="8dp">
 

@@ -23,8 +23,7 @@
             android:id="@+id/corpIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_margin="8dp"
             android:src="@drawable/ic_launcher" />
 
     </RelativeLayout>
@@ -33,7 +32,6 @@
         android:id="@+id/progressBarLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/iconsLayout"
         android:layout_marginBottom="8dp">
 
         <ProgressBar
@@ -41,7 +39,6 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
             android:background="@drawable/border_char_skill_filled_mid" />
@@ -51,8 +48,8 @@
             style="@style/skillProgressStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/progressBar"
-            android:layout_marginLeft="10dp"
+            android:layout_alignStart="@+id/progressBar"
+            android:layout_marginStart="10dp"
             android:text="Power Grid Management* V" />
 
         <TextView
@@ -60,8 +57,8 @@
             style="@style/skillProgressStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/progressBar"
-            android:layout_marginRight="10dp"
+            android:layout_alignEnd="@+id/progressBar"
+            android:layout_marginEnd="10dp"
             android:text="20ч 22мин" />
 
     </RelativeLayout>
@@ -69,8 +66,7 @@
     <RelativeLayout
         android:id="@+id/spLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/progressBarLayout">
+        android:layout_height="wrap_content">
 
 
         <ImageView
@@ -78,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:src="@drawable/sp_icon" />
 
         <TextView
@@ -86,8 +82,8 @@
             style="@style/skillProgressStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
             android:text="2 694 002 SP" />
 
     </RelativeLayout>
@@ -95,15 +91,14 @@
     <RelativeLayout
         android:id="@+id/iskLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lineSeparator1">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/iskIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:src="@drawable/isk_icon" />
 
         <TextView
@@ -111,8 +106,8 @@
             style="@style/skillProgressStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
             android:text="92 892 002 ISK" />
 
     </RelativeLayout>
