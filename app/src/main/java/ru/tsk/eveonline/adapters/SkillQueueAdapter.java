@@ -37,7 +37,7 @@ public class SkillQueueAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.activity_skill_queue, null);
 
-            skillNameTV = (TextView) convertView.findViewById(R.id.skillInQueueName);
+            skillNameTV = (TextView) convertView.findViewById(R.id.skillName);
             endTimeTV = (TextView) convertView.findViewById(R.id.endTime);
         }
 
