@@ -3,7 +3,7 @@
     android:id="@+id/progressBarLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/border_char_skill_filled"
+    android:background="@drawable/default_border_big"
     android:orientation="vertical"
     android:padding="8dp">
 
