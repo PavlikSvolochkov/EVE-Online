@@ -2,8 +2,8 @@ package ru.tsk.eveonline.dagger.skills;
 
 import dagger.Module;
 import dagger.Provides;
-import ru.tsk.eveonline.modules.skill_queue.SkillQueueContract;
-import ru.tsk.eveonline.modules.skill_queue.SkillQueuePresenter;
+import ru.tsk.eveonline.modules.skills.SkillQueueContract;
+import ru.tsk.eveonline.modules.skills.SkillQueuePresenter;
 
 @Module
 public class SkillQueueModule {

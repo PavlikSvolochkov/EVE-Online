@@ -5,7 +5,7 @@
     android:background="@drawable/gallente_party"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context="ru.tsk.eveonline.LoginActivity">
+    tools:context="ru.tsk.eveonline.modules.login.LoginFragment">
 
     <LinearLayout
         android:id="@+id/email_login_form"

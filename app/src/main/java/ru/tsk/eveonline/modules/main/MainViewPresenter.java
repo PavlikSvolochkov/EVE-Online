@@ -1,4 +1,4 @@
-package ru.tsk.eveonline.modules.mainview;
+package ru.tsk.eveonline.modules.main;
 
 public class MainViewPresenter implements MainViewContract.Presenter {
 

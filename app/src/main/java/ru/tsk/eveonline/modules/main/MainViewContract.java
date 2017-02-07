@@ -1,4 +1,4 @@
-package ru.tsk.eveonline.modules.mainview;
+package ru.tsk.eveonline.modules.main;
 
 import ru.tsk.eveonline.dagger.IBasePresenter;
 import ru.tsk.eveonline.dagger.IBaseView;

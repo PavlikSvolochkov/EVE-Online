@@ -1,9 +1,9 @@
-package ru.tsk.eveonline.dagger.mainview;
+package ru.tsk.eveonline.dagger.main;
 
 import dagger.Module;
 import dagger.Provides;
-import ru.tsk.eveonline.modules.mainview.MainViewContract;
-import ru.tsk.eveonline.modules.mainview.MainViewPresenter;
+import ru.tsk.eveonline.modules.main.MainViewContract;
+import ru.tsk.eveonline.modules.main.MainViewPresenter;
 
 @Module
 public class MainViewModule {
