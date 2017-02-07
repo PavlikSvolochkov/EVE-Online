@@ -7,7 +7,8 @@ import ru.tsk.eveonline.modules.skills.SkillQueueFragment;
 
 @SkillQueue
 @Component(modules = SkillQueueModule.class, dependencies = AppComponent.class)
-public interface SkillQueuePresenterComponent {
-    void inject(SkillQueueFragment skillQueueFragment);
-}
+public interface SkillQueueComponent {
 
+    void inject(SkillQueueFragment saveFragment);
+
+}

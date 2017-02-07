@@ -1,4 +1,4 @@
-package ru.tsk.eveonline.dagger;
+package ru.tsk.eveonline.app;
 
 public interface IBasePresenter<T> {
 

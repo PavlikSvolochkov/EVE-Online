@@ -1,12 +1,18 @@
 package ru.tsk.eveonline.dagger;
 
-import dagger.Component;
-import ru.tsk.eveonline.dagger.database.StorageModule;
-import ru.tsk.eveonline.modules.main.MainActivity;
+import android.content.Context;
 
-@Component(modules = {StorageModule.class})
+import javax.inject.Singleton;
+
+import dagger.Component;
+
+@Singleton
+@Component(modules = {AppModule.class})
 public interface AppComponent {
 
-    void injectsMainActivity(MainActivity mainActivity);
+    Context context();
 
+//    void injectsMainActivity(MainActivity mainActivity);
+
+//    void injectsSkillQueueFragment(SkillQueueFragment fragment);
 }

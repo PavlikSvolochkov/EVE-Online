@@ -1,7 +1,7 @@
 package ru.tsk.eveonline.modules.main;
 
-import ru.tsk.eveonline.dagger.IBasePresenter;
-import ru.tsk.eveonline.dagger.IBaseView;
+import ru.tsk.eveonline.app.IBasePresenter;
+import ru.tsk.eveonline.app.IBaseView;
 
 public class MainViewContract {
 
